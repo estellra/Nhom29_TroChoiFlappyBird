@@ -7,7 +7,8 @@ public partial class PlayerControls : CharacterBody2D
 	public const int Jump = -400;
 	public const int Fall= 1000;
 	public bool isDead = false;
-	
+	public const int BotY = 365; // Xác định qua Bot
+	public const int TopY = -312; // Xác định qua Top
 	public override void _PhysicsProcess(double delta)
 	{
 			if (isDead)
@@ -21,8 +22,8 @@ public partial class PlayerControls : CharacterBody2D
 			velocity.X=Speed; // vận tốc bthuog
 			Velocity=velocity;
 			MoveAndSlide();
-			if (IsOnFloor())
-			{
+			if ((Position.Y >= BotY)||(Position.Y <= -312)){     
+				Position = new Vector2(Position.X, BotY); 
 				Dead();
 			}
 	}

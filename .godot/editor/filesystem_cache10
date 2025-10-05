@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1759652322
+::res://::1759667568
 icon.svg::CompressedTexture2D::1790880795757653::1759652250::1759652322::1::::<><><>0<>0<>1d558fff71561543e2cf7e0d300c3350<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 README.md::TextFile::-1::1759652250::0::1::::<><><>0<>0<><>::
 ::res://asset/::1759654128
@@ -7,8 +7,8 @@ bg.png::CompressedTexture2D::8400811077479155488::1759652250::1759652322::1::::<
 bird.png::CompressedTexture2D::3777742034295680889::1759654090::1759654090::1::::<><><>0<>0<>45eaae92c41ae8aa38e9153bcec67550<>res://.godot/imported/bird.png-40675eace79289595fa48a834f80e3c6.ctex::
 deadbird.png::CompressedTexture2D::3811829826993406822::1759654128::1759654128::1::::<><><>0<>0<>ed3d49b028bb72e35a0ff7325fe8db23<>res://.godot/imported/deadbird.png-bbcadaf575ce7a8f35bac26358dcccbc.ctex::
 ground.png::CompressedTexture2D::2918856521398692682::1759652250::1759652322::1::::<><><>0<>0<>fc4e40209d0caaed433226248c55a28d<>res://.godot/imported/ground.png-6a07d8d399ada839f0de2b87e5126595.ctex::
-::res://scenes/::1759652250
-ground.tscn::PackedScene::231556836471825148::1759652250::0::1::::<><><>0<>0<><>::uid://bht6e1mr7xumk::::res://asset/ground.png
-main.tscn::PackedScene::5926153398409090926::1759652250::0::1::::<><><>0<>0<><>::uid://4pqund3nukl7::::res://scenes/Player.tscn<>uid://drxoeprwsaoce::::res://asset/bg.png<>uid://dkfybum1em5q::::res://scenes/ground.tscn
-Player.tscn::PackedScene::2067450008304524526::1759652250::0::1::::<><><>0<>0<><>::uid://4q335xxs2p::::res://icon.svg<>uid://brmmctuddu8w1::::res://PlayerControls.cs
-PlayerControls.cs::CSharpScript::3605136763070257594::1759652250::0::1::::<><><>0<>0<><>::
+::res://scenes/::1759660840
+ground.tscn::PackedScene::231556836471825148::1759658467::0::1::::<><><>0<>0<><>::uid://bht6e1mr7xumk::::res://asset/ground.png
+main.tscn::PackedScene::5926153398409090926::1759658653::0::1::::<><><>0<>0<><>::uid://4pqund3nukl7::::res://scenes/Player.tscn<>uid://drxoeprwsaoce::::res://asset/bg.png<>uid://dkfybum1em5q::::res://scenes/ground.tscn
+Player.tscn::PackedScene::2067450008304524526::1759658653::0::1::::<><><>0<>0<><>::uid://bt274how3wgqr::::res://asset/bird.png<>uid://brmmctuddu8w1::::res://scenes/PlayerControls.cs
+PlayerControls.cs::CSharpScript::3605136763070257594::1759660840::0::1::::<>CharacterBody2D<><>0<>0<><>::
