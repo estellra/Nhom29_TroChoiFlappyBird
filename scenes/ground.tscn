@@ -1,9 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkfybum1em5q"]
+[gd_scene load_steps=3 format=3 uid="uid://dkfybum1em5q"]
 
 [ext_resource type="Texture2D" uid="uid://bht6e1mr7xumk" path="res://asset/ground.png" id="1_yh8r4"]
 
-[node name="Ground" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pybca"]
+size = Vector2(1769, 165)
+
+[node name="Ground" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(432, 481)
+position = Vector2(432, 482)
+scale = Vector2(1, 0.98809534)
 texture = ExtResource("1_yh8r4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(429.5, 486.5)
+shape = SubResource("RectangleShape2D_pybca")

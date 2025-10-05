@@ -1,0 +1,4 @@
+res://scenes/Player.tscn
+res://scenes/PlayerControls.cs
+res://scenes/ground.tscn
+res://scenes/main.tscn
