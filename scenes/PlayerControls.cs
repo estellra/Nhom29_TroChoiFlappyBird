@@ -80,16 +80,16 @@ public partial class PlayerControls : Node2D{
 	{
 		return GlobalPosition;
 	}
-	private void CheckForCollision()
+	private void CheckForCollision() 
 	{
-	
-		if(Collision(getCenter(),radiushitbox,test))
+		//xem mặt đất như một cái rectangle lớn là được
+		if(Collision(getCenter(),radiushitbox,test))// cái này để debug nữa xóa sau
 		{
-			GD.Print("ban da die!");
 			isDead=true;
 		}
 	}
-	private bool Collision(Vector2 HitboxCenter,float radius, Rect2 obj)
+	
+	private bool Collision(Vector2 HitboxCenter,float radius, Rect2 obj) //kiểm tra va chạm
 	{
 		float X = Mathf.Clamp(HitboxCenter.X, obj.Position.X, obj.Position.X + obj.Size.X);
 		float Y = Mathf.Clamp(HitboxCenter.Y, obj.Position.Y, obj.Position.Y + obj.Size.Y);
