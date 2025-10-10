@@ -16,3 +16,21 @@ C:\Users\CPS\-nLTTQ\.godot\mono\temp\obj\Debug\refint\New Game Project.dll
 C:\Users\CPS\-nLTTQ\.godot\mono\temp\obj\Debug\New Game Project.pdb
 C:\Users\CPS\-nLTTQ\.godot\mono\temp\obj\Debug\New Game Project.genruntimeconfig.cache
 C:\Users\CPS\-nLTTQ\.godot\mono\temp\obj\Debug\ref\New Game Project.dll
+D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\bin\Debug\New Game Project.deps.json
+D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\bin\Debug\New Game Project.runtimeconfig.json
+D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\bin\Debug\New Game Project.dll
+D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\bin\Debug\New Game Project.pdb
+D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\bin\Debug\GodotSharp.dll
+D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\obj\Debug\New Game Project.csproj.AssemblyReference.cache
+D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\obj\Debug\New Game Project.GeneratedMSBuildEditorConfig.editorconfig
+D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\obj\Debug\New Game Project.AssemblyInfoInputs.cache
+D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\obj\Debug\New Game Project.AssemblyInfo.cs
+D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\obj\Debug\New Game Project.csproj.CoreCompileInputs.cache
+D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\obj\Debug\New Game Project.sourcelink.json
+D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\obj\Debug\New Game.D781FC22.Up2Date
+D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\obj\Debug\New Game Project.dll
+D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\obj\Debug\refint\New Game Project.dll
+D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\obj\Debug\New Game Project.pdb
+D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\obj\Debug\New Game Project.genruntimeconfig.cache
+D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\obj\Debug\ref\New Game Project.dll
