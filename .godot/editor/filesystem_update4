@@ -1,0 +1,4 @@
+res://scenes/PlayerControls.cs
+res://scenes/CameraFollower.cs
+res://scenes/main.tscn
+res://scenes/Player.tscn
