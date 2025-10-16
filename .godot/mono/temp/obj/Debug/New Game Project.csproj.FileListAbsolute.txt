@@ -1,36 +1,54 @@
-C:\Users\CPS\-nLTTQ\.godot\mono\temp\bin\Debug\New Game Project.deps.json
-C:\Users\CPS\-nLTTQ\.godot\mono\temp\bin\Debug\New Game Project.runtimeconfig.json
-C:\Users\CPS\-nLTTQ\.godot\mono\temp\bin\Debug\New Game Project.dll
-C:\Users\CPS\-nLTTQ\.godot\mono\temp\bin\Debug\New Game Project.pdb
-C:\Users\CPS\-nLTTQ\.godot\mono\temp\bin\Debug\GodotSharp.dll
-C:\Users\CPS\-nLTTQ\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
-C:\Users\CPS\-nLTTQ\.godot\mono\temp\obj\Debug\New Game Project.csproj.AssemblyReference.cache
-C:\Users\CPS\-nLTTQ\.godot\mono\temp\obj\Debug\New Game Project.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\CPS\-nLTTQ\.godot\mono\temp\obj\Debug\New Game Project.AssemblyInfoInputs.cache
-C:\Users\CPS\-nLTTQ\.godot\mono\temp\obj\Debug\New Game Project.AssemblyInfo.cs
-C:\Users\CPS\-nLTTQ\.godot\mono\temp\obj\Debug\New Game Project.csproj.CoreCompileInputs.cache
-C:\Users\CPS\-nLTTQ\.godot\mono\temp\obj\Debug\New Game Project.sourcelink.json
-C:\Users\CPS\-nLTTQ\.godot\mono\temp\obj\Debug\New Game.D781FC22.Up2Date
-C:\Users\CPS\-nLTTQ\.godot\mono\temp\obj\Debug\New Game Project.dll
-C:\Users\CPS\-nLTTQ\.godot\mono\temp\obj\Debug\refint\New Game Project.dll
-C:\Users\CPS\-nLTTQ\.godot\mono\temp\obj\Debug\New Game Project.pdb
-C:\Users\CPS\-nLTTQ\.godot\mono\temp\obj\Debug\New Game Project.genruntimeconfig.cache
-C:\Users\CPS\-nLTTQ\.godot\mono\temp\obj\Debug\ref\New Game Project.dll
-D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\bin\Debug\New Game Project.deps.json
-D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\bin\Debug\New Game Project.runtimeconfig.json
-D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\bin\Debug\New Game Project.dll
-D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\bin\Debug\New Game Project.pdb
-D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\bin\Debug\GodotSharp.dll
-D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
-D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\obj\Debug\New Game Project.csproj.AssemblyReference.cache
-D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\obj\Debug\New Game Project.GeneratedMSBuildEditorConfig.editorconfig
-D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\obj\Debug\New Game Project.AssemblyInfoInputs.cache
-D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\obj\Debug\New Game Project.AssemblyInfo.cs
-D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\obj\Debug\New Game Project.csproj.CoreCompileInputs.cache
-D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\obj\Debug\New Game Project.sourcelink.json
-D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\obj\Debug\New Game.D781FC22.Up2Date
-D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\obj\Debug\New Game Project.dll
-D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\obj\Debug\refint\New Game Project.dll
-D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\obj\Debug\New Game Project.pdb
-D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\obj\Debug\New Game Project.genruntimeconfig.cache
-D:\project\-nLTTQ\-nLTTQ\.godot\mono\temp\obj\Debug\ref\New Game Project.dll
+C:/Users/CPS/-nLTTQ/.godot/mono/temp/bin/Debug/New Game Project.deps.json
+C:/Users/CPS/-nLTTQ/.godot/mono/temp/bin/Debug/New Game Project.runtimeconfig.json
+C:/Users/CPS/-nLTTQ/.godot/mono/temp/bin/Debug/New Game Project.dll
+C:/Users/CPS/-nLTTQ/.godot/mono/temp/bin/Debug/New Game Project.pdb
+C:/Users/CPS/-nLTTQ/.godot/mono/temp/bin/Debug/GodotSharp.dll
+C:/Users/CPS/-nLTTQ/.godot/mono/temp/bin/Debug/GodotSharpEditor.dll
+C:/Users/CPS/-nLTTQ/.godot/mono/temp/obj/Debug/New Game Project.csproj.AssemblyReference.cache
+C:/Users/CPS/-nLTTQ/.godot/mono/temp/obj/Debug/New Game Project.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/CPS/-nLTTQ/.godot/mono/temp/obj/Debug/New Game Project.AssemblyInfoInputs.cache
+C:/Users/CPS/-nLTTQ/.godot/mono/temp/obj/Debug/New Game Project.AssemblyInfo.cs
+C:/Users/CPS/-nLTTQ/.godot/mono/temp/obj/Debug/New Game Project.csproj.CoreCompileInputs.cache
+C:/Users/CPS/-nLTTQ/.godot/mono/temp/obj/Debug/New Game Project.sourcelink.json
+C:/Users/CPS/-nLTTQ/.godot/mono/temp/obj/Debug/New Game.D781FC22.Up2Date
+C:/Users/CPS/-nLTTQ/.godot/mono/temp/obj/Debug/New Game Project.dll
+C:/Users/CPS/-nLTTQ/.godot/mono/temp/obj/Debug/refint/New Game Project.dll
+C:/Users/CPS/-nLTTQ/.godot/mono/temp/obj/Debug/New Game Project.pdb
+C:/Users/CPS/-nLTTQ/.godot/mono/temp/obj/Debug/New Game Project.genruntimeconfig.cache
+C:/Users/CPS/-nLTTQ/.godot/mono/temp/obj/Debug/ref/New Game Project.dll
+D:/project/-nLTTQ/-nLTTQ/.godot/mono/temp/bin/Debug/New Game Project.deps.json
+D:/project/-nLTTQ/-nLTTQ/.godot/mono/temp/bin/Debug/New Game Project.runtimeconfig.json
+D:/project/-nLTTQ/-nLTTQ/.godot/mono/temp/bin/Debug/New Game Project.dll
+D:/project/-nLTTQ/-nLTTQ/.godot/mono/temp/bin/Debug/New Game Project.pdb
+D:/project/-nLTTQ/-nLTTQ/.godot/mono/temp/bin/Debug/GodotSharp.dll
+D:/project/-nLTTQ/-nLTTQ/.godot/mono/temp/bin/Debug/GodotSharpEditor.dll
+D:/project/-nLTTQ/-nLTTQ/.godot/mono/temp/obj/Debug/New Game Project.csproj.AssemblyReference.cache
+D:/project/-nLTTQ/-nLTTQ/.godot/mono/temp/obj/Debug/New Game Project.GeneratedMSBuildEditorConfig.editorconfig
+D:/project/-nLTTQ/-nLTTQ/.godot/mono/temp/obj/Debug/New Game Project.AssemblyInfoInputs.cache
+D:/project/-nLTTQ/-nLTTQ/.godot/mono/temp/obj/Debug/New Game Project.AssemblyInfo.cs
+D:/project/-nLTTQ/-nLTTQ/.godot/mono/temp/obj/Debug/New Game Project.csproj.CoreCompileInputs.cache
+D:/project/-nLTTQ/-nLTTQ/.godot/mono/temp/obj/Debug/New Game Project.sourcelink.json
+D:/project/-nLTTQ/-nLTTQ/.godot/mono/temp/obj/Debug/New Game.D781FC22.Up2Date
+D:/project/-nLTTQ/-nLTTQ/.godot/mono/temp/obj/Debug/New Game Project.dll
+D:/project/-nLTTQ/-nLTTQ/.godot/mono/temp/obj/Debug/refint/New Game Project.dll
+D:/project/-nLTTQ/-nLTTQ/.godot/mono/temp/obj/Debug/New Game Project.pdb
+D:/project/-nLTTQ/-nLTTQ/.godot/mono/temp/obj/Debug/New Game Project.genruntimeconfig.cache
+D:/project/-nLTTQ/-nLTTQ/.godot/mono/temp/obj/Debug/ref/New Game Project.dll
+/Users/huy/Documents/GitHub/-nLTTQ/.godot/mono/temp/bin/Debug/New Game Project.deps.json
+/Users/huy/Documents/GitHub/-nLTTQ/.godot/mono/temp/bin/Debug/New Game Project.runtimeconfig.json
+/Users/huy/Documents/GitHub/-nLTTQ/.godot/mono/temp/bin/Debug/New Game Project.dll
+/Users/huy/Documents/GitHub/-nLTTQ/.godot/mono/temp/bin/Debug/New Game Project.pdb
+/Users/huy/Documents/GitHub/-nLTTQ/.godot/mono/temp/bin/Debug/GodotSharp.dll
+/Users/huy/Documents/GitHub/-nLTTQ/.godot/mono/temp/bin/Debug/GodotSharpEditor.dll
+/Users/huy/Documents/GitHub/-nLTTQ/.godot/mono/temp/obj/Debug/New Game Project.csproj.AssemblyReference.cache
+/Users/huy/Documents/GitHub/-nLTTQ/.godot/mono/temp/obj/Debug/New Game Project.GeneratedMSBuildEditorConfig.editorconfig
+/Users/huy/Documents/GitHub/-nLTTQ/.godot/mono/temp/obj/Debug/New Game Project.AssemblyInfoInputs.cache
+/Users/huy/Documents/GitHub/-nLTTQ/.godot/mono/temp/obj/Debug/New Game Project.AssemblyInfo.cs
+/Users/huy/Documents/GitHub/-nLTTQ/.godot/mono/temp/obj/Debug/New Game Project.csproj.CoreCompileInputs.cache
+/Users/huy/Documents/GitHub/-nLTTQ/.godot/mono/temp/obj/Debug/New Game Project.sourcelink.json
+/Users/huy/Documents/GitHub/-nLTTQ/.godot/mono/temp/obj/Debug/New Game.D781FC22.Up2Date
+/Users/huy/Documents/GitHub/-nLTTQ/.godot/mono/temp/obj/Debug/New Game Project.dll
+/Users/huy/Documents/GitHub/-nLTTQ/.godot/mono/temp/obj/Debug/refint/New Game Project.dll
+/Users/huy/Documents/GitHub/-nLTTQ/.godot/mono/temp/obj/Debug/New Game Project.pdb
+/Users/huy/Documents/GitHub/-nLTTQ/.godot/mono/temp/obj/Debug/New Game Project.genruntimeconfig.cache
+/Users/huy/Documents/GitHub/-nLTTQ/.godot/mono/temp/obj/Debug/ref/New Game Project.dll
