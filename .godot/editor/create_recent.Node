@@ -1,7 +1,3 @@
-Sprite2D
-Node
-StaticBody2D
-Area2D
-CollisionShape2D
+Camera2D
 Node2D
-AnimationPlayer
+Sprite2D

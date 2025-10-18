@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0aqiggkveyt3"
-path="res://.godot/imported/bird.png-40675eace79289595fa48a834f80e3c6.ctex"
+uid="uid://c7egl8aaxot6k"
+path="res://.godot/imported/pipe-green.png-8e22f8eedea579afbe7e22f38dd4bf79.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/bird.png"
-dest_files=["res://.godot/imported/bird.png-40675eace79289595fa48a834f80e3c6.ctex"]
+source_file="res://asset/pipe-green.png"
+dest_files=["res://.godot/imported/pipe-green.png-8e22f8eedea579afbe7e22f38dd4bf79.ctex"]
 
 [params]
 

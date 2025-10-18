@@ -88,23 +88,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\CPS\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\cdd\\.nuget\\packages\\": {},
+    "D:\\cache\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\CPS\\-nLTTQ\\New Game Project.csproj",
-      "projectName": "New Game Project",
-      "projectPath": "C:\\Users\\CPS\\-nLTTQ\\New Game Project.csproj",
-      "packagesPath": "C:\\Users\\CPS\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\CPS\\-nLTTQ\\.godot\\mono\\temp\\obj\\",
+      "projectUniqueName": "D:\\project\\test-physic\\TestPhysic.csproj",
+      "projectName": "TestPhysic",
+      "projectPath": "D:\\project\\test-physic\\TestPhysic.csproj",
+      "packagesPath": "C:\\Users\\cdd\\.nuget\\packages\\",
+      "outputPath": "D:\\project\\test-physic\\.godot\\mono\\temp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "D:\\cache\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\CPS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\cdd\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -113,6 +113,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -131,7 +132,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "10.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -169,7 +170,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100-rc.1.25451.107/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
