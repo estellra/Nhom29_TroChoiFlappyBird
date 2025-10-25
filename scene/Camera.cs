@@ -8,7 +8,11 @@ public partial class Camera : Node2D
 	private Node2D player;
 	[Export] public float CameraSmooth = 8f;
 	private Vector2 desiredPlayerScreenPos; 
-	private Vector2 currentCameraPos = Vector2.Zero; // Vị trí camera hiện tại (world space)
+	private Vector2 currentCameraPos = Vector2.Zero;
+	
+	// List các node cần di chuyển theo camera (KHÔNG bao gồm Background)
+	private List<Node2D> nodesToMove = new List<Node2D>();
+	
 	public override void _Ready()
 	{
 		// Lấy player
@@ -19,7 +23,7 @@ public partial class Camera : Node2D
 		
 		if (player == null)
 		{
-			GD.PrintErr("KHÔNG TÌM THẤY PLAYER! Vào Inspector của CameraController, kéo PlayerControls vào ô PlayerPath");
+			GD.PrintErr("KHÔNG TÌM THẤY PLAYER! Vào Inspector của Camera, kéo Player vào ô PlayerPath");
 			return;
 		}
 		
@@ -30,9 +34,36 @@ public partial class Camera : Node2D
 		// Khởi tạo camera tại vị trí player
 		currentCameraPos = player.Position - desiredPlayerScreenPos;
 		
+		// Lấy tất cả các node cần di chuyển theo camera (trừ Bg và Player)
+		CollectNodesToMove();
+		
 		GD.Print("=== CAMERA READY ===");
 		GD.Print($"Player: {player.Name}");
 		GD.Print($"Desired screen pos: {desiredPlayerScreenPos}");
+		GD.Print($"Nodes to move: {nodesToMove.Count}");
+	}
+	
+	private void CollectNodesToMove()
+	{
+		// Lấy tất cả các node con của main (trừ Bg, Camera, và Player)
+		Node parent = GetParent();
+		if (parent == null) return;
+		
+		foreach (Node child in parent.GetChildren())
+		{
+			if (child is Node2D node2D)
+			{
+				string nodeName = node2D.Name;
+				
+				// KHÔNG di chuyển: Background, Camera, Player
+				if (nodeName == "Bg" || nodeName == "Camera" || nodeName == "Player")
+					continue;
+				
+				// DI CHUYỂN: Ground, PipeSpawner, và các node khác
+				nodesToMove.Add(node2D);
+				GD.Print($"Camera will move: {nodeName}");
+			}
+		}
 	}
 	
 	public override void _Process(double delta)
@@ -45,18 +76,23 @@ public partial class Camera : Node2D
 		// Smooth camera movement
 		currentCameraPos = currentCameraPos.Lerp(targetCameraPos, CameraSmooth * (float)delta);
 		
-		// Di chuyển player về vị trí hiển thị mong muốn
-		// Player logic vẫn di chuyển bình thường, nhưng render ở vị trí khác
-		Vector2 playerRenderPos = player.Position - currentCameraPos;
-		
-		// Dùng Transform để không ảnh hưởng logic
-		// Ta sẽ offset toàn bộ viewport
+		// Dùng CanvasTransform để di chuyển TOÀN BỘ viewport
+		// Background sẽ tự bù trừ chuyển động này trong code Bg.cs
 		GetViewport().CanvasTransform = Transform2D.Identity.Translated(-currentCameraPos);
 	}
 	
 	public void ResetCamera()
 	{
 		if (player != null)
+		{
 			currentCameraPos = player.Position - desiredPlayerScreenPos;
+			
+			// Reset vị trí các node về 0
+			foreach (Node2D node in nodesToMove)
+			{
+				if (node != null && IsInstanceValid(node))
+					node.Position = Vector2.Zero;
+			}
+		}
 	}
 }

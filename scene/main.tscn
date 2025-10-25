@@ -10,7 +10,7 @@
 
 [node name="main" type="Node2D"]
 
-[node name="Bg" type="Node2D" parent="."]
+[node name="Background" type="Node2D" parent="."]
 z_index = -20
 script = ExtResource("1_4j5ol")
 PlayerPath = NodePath("../Player")
@@ -32,3 +32,4 @@ texture = ExtResource("4_lquwl")
 position = Vector2(201, 328)
 
 [node name="Camera" parent="." instance=ExtResource("6_4j5ol")]
+PlayerPath = NodePath("../Player")
