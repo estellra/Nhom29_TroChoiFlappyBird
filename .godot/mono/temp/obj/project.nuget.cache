@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "28qpIB5cSc8=",
+  "dgSpecHash": "4UXP4l5sj+8=",
   "success": true,
-  "projectFilePath": "D:\\project\\test-physic\\TestPhysic.csproj",
+  "projectFilePath": "/Users/huy/Documents/GitHub/-nLTTQ/TestPhysic.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\cdd\\.nuget\\packages\\godot.sourcegenerators\\4.5.0\\godot.sourcegenerators.4.5.0.nupkg.sha512",
-    "C:\\Users\\cdd\\.nuget\\packages\\godotsharp\\4.5.0\\godotsharp.4.5.0.nupkg.sha512",
-    "C:\\Users\\cdd\\.nuget\\packages\\godotsharpeditor\\4.5.0\\godotsharpeditor.4.5.0.nupkg.sha512"
+    "/Users/huy/.nuget/packages/godot.sourcegenerators/4.5.0/godot.sourcegenerators.4.5.0.nupkg.sha512",
+    "/Users/huy/.nuget/packages/godotsharp/4.5.0/godotsharp.4.5.0.nupkg.sha512",
+    "/Users/huy/.nuget/packages/godotsharpeditor/4.5.0/godotsharpeditor.4.5.0.nupkg.sha512",
+    "/Users/huy/.nuget/packages/microsoft.netcore.app.ref/8.0.20/microsoft.netcore.app.ref.8.0.20.nupkg.sha512",
+    "/Users/huy/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.20/microsoft.aspnetcore.app.ref.8.0.20.nupkg.sha512"
   ],
   "logs": []
 }

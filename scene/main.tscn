@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://dfnd8kgl3vjg7"]
+[gd_scene load_steps=8 format=3 uid="uid://dfnd8kgl3vjg7"]
 
+[ext_resource type="Script" uid="uid://bfsph8sxsglpx" path="res://Background.cs" id="1_4j5ol"]
 [ext_resource type="PackedScene" uid="uid://dthp1brjdijx0" path="res://scene/player.tscn" id="2_h2yge"]
 [ext_resource type="Texture2D" uid="uid://drxoeprwsaoce" path="res://asset/bg.png" id="3_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://bqnis42002sky" path="res://scene/pipe.tscn" id="4_0ha60"]
@@ -9,11 +10,12 @@
 
 [node name="main" type="Node2D"]
 
-[node name="Bg" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(203.5, 257)
-scale = Vector2(1.3344908, 1)
-texture = ExtResource("3_1bvp3")
+[node name="Bg" type="Node2D" parent="."]
+z_index = -20
+script = ExtResource("1_4j5ol")
+PlayerPath = NodePath("../Player")
+ScrollSpeed = 0.5
+BackgroundTexture = ExtResource("3_1bvp3")
 
 [node name="PipeSpawner" parent="." instance=ExtResource("5_4j5ol")]
 

@@ -88,32 +88,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\cdd\\.nuget\\packages\\": {},
-    "D:\\cache\\NuGetPackages": {}
+    "/Users/huy/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\project\\test-physic\\TestPhysic.csproj",
+      "projectUniqueName": "/Users/huy/Documents/GitHub/-nLTTQ/TestPhysic.csproj",
       "projectName": "TestPhysic",
-      "projectPath": "D:\\project\\test-physic\\TestPhysic.csproj",
-      "packagesPath": "C:\\Users\\cdd\\.nuget\\packages\\",
-      "outputPath": "D:\\project\\test-physic\\.godot\\mono\\temp\\obj\\",
+      "projectPath": "/Users/huy/Documents/GitHub/-nLTTQ/TestPhysic.csproj",
+      "packagesPath": "/Users/huy/.nuget/packages/",
+      "outputPath": "/Users/huy/Documents/GitHub/-nLTTQ/.godot/mono/temp/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "D:\\cache\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\cdd\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/huy/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
+        "/usr/local/share/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -132,7 +125,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "10.0.100"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -165,12 +158,22 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.20, 8.0.20]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.20, 8.0.20]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100-rc.1.25451.107/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.305/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
