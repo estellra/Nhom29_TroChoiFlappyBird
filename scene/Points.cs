@@ -1,0 +1,17 @@
+using Godot;
+using System;
+
+public partial class Points : RichTextLabel
+{
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+		Position=new Vector2(GetViewportRect().Size.X/2,100);
+		Text="0";
+	}
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+	}
+}

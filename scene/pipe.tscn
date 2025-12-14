@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqnis42002sky"]
+
+[ext_resource type="Texture2D" uid="uid://c7egl8aaxot6k" path="res://asset/pipe-green.png" id="1_ij3kp"]
+[ext_resource type="Script" uid="uid://dtrlj2rme7rb0" path="res://scene/Pipe.cs" id="1_nqm84"]
+
+[node name="Pipe" type="Node2D"]
+script = ExtResource("1_nqm84")
+
+[node name="Top" type="Sprite2D" parent="."]
+position = Vector2(1172, 11)
+scale = Vector2(1.0104944, 1)
+texture = ExtResource("1_ij3kp")
+flip_v = true
+
+[node name="Bottom" type="Sprite2D" parent="."]
+position = Vector2(1173, 489)
+texture = ExtResource("1_ij3kp")
