@@ -30,60 +30,79 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="TitleScreen" type="Control"]
-layout_mode = 3
+[node name="TitleScreen" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_t18hh")
+
+[node name="TitleScreenBackground" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_t18hh")
-
-[node name="TitleScreenBackground" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 1151.0
-offset_bottom = 911.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture = ExtResource("1_i58fu")
+metadata/_edit_use_anchors_ = true
 
 [node name="TitleScreenGround" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 760.0
-offset_right = 1730.0
-offset_bottom = 928.0
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -88.0
+offset_top = -168.0
+offset_right = 488.0
+grow_horizontal = 2
+grow_vertical = 0
 texture = ExtResource("2_2fir4")
 script = ExtResource("3_2fir4")
 
 [node name="Player" type="AnimatedSprite2D" parent="."]
-position = Vector2(573.0001, 465)
+process_mode = 3
+position = Vector2(693, 365)
 scale = Vector2(4.1470585, 4.3333335)
 sprite_frames = SubResource("SpriteFrames_rbyiy")
 animation = &"fly"
 
 [node name="Title" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 214.0
-offset_top = 70.0
-offset_right = 942.0
-offset_bottom = 492.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -364.0
+offset_top = 20.0
+offset_right = 364.0
+offset_bottom = 442.0
+grow_horizontal = 2
 texture = ExtResource("5_j6oad")
 
 [node name="TenNhom" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 364.0
-offset_top = 862.0
-offset_right = 926.0
-offset_bottom = 923.0
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_font_sizes/normal_font_size = 20
 text = "2025-IT008.Q14-Nhóm 29"
+horizontal_alignment = 1
+vertical_alignment = 1
 script = ExtResource("9_0ctqs")
 
 [node name="TitleScreenState1" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 442.0
-offset_top = 647.0
-offset_right = 1050.0
-offset_bottom = 687.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -304.0
+offset_top = -290.0
+offset_right = 304.0
+offset_bottom = -250.0
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_constants/shadow_outline_size = 3
 theme_override_constants/outline_size = 12
 theme_override_fonts/normal_font = ExtResource("10_nohhj")
@@ -93,14 +112,22 @@ theme_override_fonts/italics_font = ExtResource("10_rbyiy")
 theme_override_fonts/mono_font = ExtResource("10_rbyiy")
 theme_override_font_sizes/normal_font_size = 30
 text = " PRESS ANY KEY"
+horizontal_alignment = 1
+vertical_alignment = 1
 script = ExtResource("12_t65bv")
 
 [node name="TItleScreenMenu" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 420.237
-offset_top = 525.964
-offset_right = 701.23694
-offset_bottom = 778.9641
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.5
+offset_top = 25.0
+offset_right = 140.5
+offset_bottom = 278.00012
+grow_horizontal = 2
+grow_vertical = 2
 alignment = 1
 
 [node name="Start" type="RichTextLabel" parent="TItleScreenMenu"]

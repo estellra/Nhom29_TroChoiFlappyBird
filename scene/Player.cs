@@ -69,7 +69,7 @@ public partial class Player : Node2D
 		tinhdiem();
 		QueueRedraw();
 	}
-	private void tinhdiem()
+	public string tinhdiem()
 	{
 		foreach(Pipe pipe in Pipes.PipeList)
 		{
@@ -81,8 +81,9 @@ public partial class Player : Node2D
 					pipe.pointed=true;
 					diem.Text=point.ToString();
 					sfx.PlayPoint();
-				}
+				}	
 		}
+		return point.ToString();
 	}
 	private Vector2 getCenter()
 	{

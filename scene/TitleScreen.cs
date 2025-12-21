@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
-public partial class TitleScreen : Control
+public partial class TitleScreen : CanvasLayer
 {
 		private Node2D player;     
 		private Control title; 
