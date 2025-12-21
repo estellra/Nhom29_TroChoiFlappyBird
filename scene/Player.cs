@@ -17,6 +17,9 @@ public partial class Player : Node2D
 	private Ground ground;
 	private RichTextLabel diem;
 	public int point;
+	private Sfx sfx;
+	private CanvasLayer GameOverUI;
+	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Draw()
 	{
@@ -33,6 +36,11 @@ public partial class Player : Node2D
 		ground.reset();
 		point=0;
 		diem.Text=point.ToString();
+		GameOverUI = GetNode<CanvasLayer>("../GameOverUI");
+		GameOverUI.ProcessMode = ProcessModeEnum.Always;
+		GameOverUI.Visible = false;
+		GameOverUI.Hide();
+		//sfx.PlayBgm(); 
 	}
 	public override void _Ready()
 	{
@@ -41,6 +49,12 @@ public partial class Player : Node2D
 		ground=GetNode<Ground>("../Ground");
 		diem=GetNode<RichTextLabel>("../ig_ui/Points");
 		this.ZIndex=2;
+		sfx = GetNode<Sfx>("../Sfx");
+		sfx.PlayBgm();
+		GameOverUI = GetNode<CanvasLayer>("../GameOverUI");
+		GameOverUI.ProcessMode = ProcessModeEnum.Always;
+		GameOverUI.Visible = false;
+		GameOverUI.Hide();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -66,6 +80,7 @@ public partial class Player : Node2D
 					point++;
 					pipe.pointed=true;
 					diem.Text=point.ToString();
+					sfx.PlayPoint();
 				}
 		}
 	}
@@ -78,22 +93,22 @@ public partial class Player : Node2D
 		if(Pipes==null) return;
 		if(Collision(getCenter(),radiushitbox,ground.gr))
 		{
-					dead=true;
 					ground.dead=true;
-					velocity=Vector2.Zero;
+					velocity=new Vector2(0, 0);
 					Pipes.stop=true;
-					return;
+					Die();
+					//return;
 		}
 		foreach(Pipe pipe in Pipes.PipeList)
 		{
 			if(Collision(getCenter(),radiushitbox,pipe.TopPipe)||
 			Collision(getCenter(),radiushitbox,pipe.BotPipe))
 				{
-					dead=true;
 					ground.dead=true;
-					velocity=Vector2.Zero;
+					velocity= new Vector2(0,velocity.Y);
 					Pipes.stop=true;
-					break;
+					Die();
+					//break;
 				}
 		}
 	}
@@ -108,7 +123,10 @@ public partial class Player : Node2D
 	}
 	private void Control()
 	{
-		if(Input.IsActionJustPressed("control_jump")) velocity.Y=jump;
+		if(Input.IsActionJustPressed("control_jump")){
+			velocity.Y=jump;
+			sfx.PlayFlap();
+		}
 		//if(Input.IsActionJustPressed("control_pause"))
 	}
 	private void Physic(float delta)
@@ -118,6 +136,14 @@ public partial class Player : Node2D
 		  Position +=velocity*delta;
 	}
 	
+	private void Die()
+{
+	if (dead) return;
+	dead = true;
+	sfx.PlayHit(); 
+	GameOverUI.Visible = true;
+	GameOverUI.Show();
+}
 
 
 }

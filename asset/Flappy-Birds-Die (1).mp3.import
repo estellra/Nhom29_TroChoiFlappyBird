@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dmuhk088y1k2p"
+path="res://.godot/imported/Flappy-Birds-Die (1).mp3-d47d3828a6d01c2b9ed9912ed38f147d.mp3str"
+
+[deps]
+
+source_file="res://asset/Flappy-Birds-Die (1).mp3"
+dest_files=["res://.godot/imported/Flappy-Birds-Die (1).mp3-d47d3828a6d01c2b9ed9912ed38f147d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

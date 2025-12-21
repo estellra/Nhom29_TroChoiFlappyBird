@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dfnd8kgl3vjg7"]
+[gd_scene load_steps=14 format=3 uid="uid://dfnd8kgl3vjg7"]
 
 [ext_resource type="Script" uid="uid://byxar7unu5jln" path="res://scene/Main.cs" id="1_p1hux"]
 [ext_resource type="PackedScene" uid="uid://dthp1brjdijx0" path="res://scene/player.tscn" id="2_h2yge"]
@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://ckuu87371tyox" path="res://scene/camera.tscn" id="6_4j5ol"]
 [ext_resource type="Script" uid="uid://du7t4j5mk0wlb" path="res://scene/BackgroundManager.cs" id="7_p1hux"]
 [ext_resource type="PackedScene" uid="uid://uny5snka3w35" path="res://scene/ingame_ui.tscn" id="10_tqoya"]
+[ext_resource type="PackedScene" uid="uid://ci7gutr4aqbye" path="res://GameOverUI.tscn" id="11_k65ib"]
+[ext_resource type="PackedScene" uid="uid://co7m6uxgvnei7" path="res://UI2.tscn" id="12_wscrc"]
+[ext_resource type="PackedScene" uid="uid://bvdrjlfvmag5" path="res://Sfx.tscn" id="13_mswub"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_p1hux")
@@ -37,3 +40,9 @@ BgTexture = ExtResource("3_1bvp3")
 CameraPath = NodePath("../Camera")
 
 [node name="ig_ui" parent="." instance=ExtResource("10_tqoya")]
+
+[node name="GameOverUI" parent="." instance=ExtResource("11_k65ib")]
+
+[node name="GamePausedUI" parent="." instance=ExtResource("12_wscrc")]
+
+[node name="Sfx" parent="." instance=ExtResource("13_mswub")]
