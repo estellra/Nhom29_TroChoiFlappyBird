@@ -143,7 +143,7 @@ text = "START"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Leaderboard" type="RichTextLabel" parent="TItleScreenMenu"]
+[node name="RichTextLabel" type="RichTextLabel" parent="TItleScreenMenu"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 theme_override_constants/shadow_outline_size = 3
@@ -151,7 +151,7 @@ theme_override_constants/outline_size = 12
 theme_override_fonts/normal_font = ExtResource("10_nohhj")
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
-text = "LEADERBOARD"
+text = "RANKING"
 horizontal_alignment = 1
 vertical_alignment = 1
 

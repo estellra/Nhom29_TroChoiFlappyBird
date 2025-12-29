@@ -1,15 +1,12 @@
 using Godot;
+using System;
 
-public partial class ResumeButton : RichTextLabel
+public partial class RankingButton : TextureRect
 {
-	private Control GamePausedUI;
-	
 	public override void _Ready()
 	{
 		ProcessMode = ProcessModeEnum.Always;
-		MouseFilter = MouseFilterEnum.Stop; 
-		GamePausedUI = GetNode<Control>("../..");
-		GamePausedUI.Visible = false;
+		MouseFilter = MouseFilterEnum.Stop;
 	}
 
 	public override void _GuiInput(InputEvent @event)
@@ -18,8 +15,9 @@ public partial class ResumeButton : RichTextLabel
 			mb.ButtonIndex == MouseButton.Left &&
 			mb.Pressed)
 		{
-			GetTree().Paused = false;
-			GamePausedUI.Visible = false;
+			GetNode<TextureRect>("../..").Hide();
+			GetNode<TextureRect>("../../../Medal").Hide();
+			GetNode<CanvasLayer>("../../../Profile").Show();
 		}
 	}
 }

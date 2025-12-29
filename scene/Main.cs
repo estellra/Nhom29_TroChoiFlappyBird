@@ -10,7 +10,7 @@ public partial class Main : Node2D
 	private Player player;
 	private PipeSpawner pipes;
 	
-	public override void _Input(InputEvent input)
+	/*public override void _Input(InputEvent input)
 	{
 		if(!gameover) return;
 		if (input is InputEventKey keyEvent && keyEvent.Pressed && !keyEvent.Echo)
@@ -20,8 +20,9 @@ public partial class Main : Node2D
 			gameover = false;
 			play = true;
 			menu=false;
+			GetNode<TextureRect>("GamePausedUI//PauseBtn").Show();
 		}
-	}
+	}*/
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -71,4 +72,20 @@ public partial class Main : Node2D
 		pause=false;
 		menu=false;
 	}
+	
+	public void Restart()
+{
+	if(!gameover) return;
+	pipes.ClearPipe();
+	player.Start();
+
+	play = true;
+	gameover = false;
+	pause = false;
+	menu = false;
+
+	GetNode<TextureRect>("GameOverUI/ScorePanel").Hide();
+	GetNode<TextureRect>("GameOverUI/Medal").Hide();
+	GetNode<TextureRect>("GamePausedUI/PauseBtn").Show();
+}
 }

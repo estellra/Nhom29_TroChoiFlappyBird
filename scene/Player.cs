@@ -15,6 +15,7 @@ public partial class Player : Node2D
 	private PipeSpawner Pipes;
 	private AnimatedSprite2D sprite;
 	private Ground ground;
+	private Main main;
 	private RichTextLabel diem;
 	public int point;
 	private Sfx sfx;
@@ -38,7 +39,6 @@ public partial class Player : Node2D
 		diem.Text=point.ToString();
 		GameOverUI = GetNode<CanvasLayer>("../GameOverUI");
 		GameOverUI.ProcessMode = ProcessModeEnum.Always;
-		GameOverUI.Visible = false;
 		GameOverUI.Hide();
 		//sfx.PlayBgm(); 
 	}
@@ -53,7 +53,6 @@ public partial class Player : Node2D
 		sfx.PlayBgm();
 		GameOverUI = GetNode<CanvasLayer>("../GameOverUI");
 		GameOverUI.ProcessMode = ProcessModeEnum.Always;
-		GameOverUI.Visible = false;
 		GameOverUI.Hide();
 	}
 
@@ -140,10 +139,16 @@ public partial class Player : Node2D
 	private void Die()
 {
 	if (dead) return;
+	GetNode<UserData>("../UserData").CheckAndSave(point);
 	dead = true;
 	sfx.PlayHit(); 
-	GameOverUI.Visible = true;
 	GameOverUI.Show();
+	GameOverUI.GetNode<TextureRect>("ScorePanel").Show();
+	GameOverUI.GetNode<TextureRect>("Medal").Show();
+	GetNode<TextureRect>("../GamePausedUI//PauseBtn").Hide();
+	main.GameOver();
+	
+	
 }
 
 

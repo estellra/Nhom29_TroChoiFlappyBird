@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dfnd8kgl3vjg7"]
+[gd_scene load_steps=15 format=3 uid="uid://dfnd8kgl3vjg7"]
 
 [ext_resource type="Script" uid="uid://byxar7unu5jln" path="res://scene/Main.cs" id="1_p1hux"]
 [ext_resource type="PackedScene" uid="uid://dthp1brjdijx0" path="res://scene/player.tscn" id="2_h2yge"]
@@ -11,8 +11,9 @@
 [ext_resource type="Script" uid="uid://du7t4j5mk0wlb" path="res://scene/BackgroundManager.cs" id="7_p1hux"]
 [ext_resource type="PackedScene" uid="uid://uny5snka3w35" path="res://scene/ingame_ui.tscn" id="10_tqoya"]
 [ext_resource type="PackedScene" uid="uid://ci7gutr4aqbye" path="res://GameOverUI.tscn" id="11_k65ib"]
-[ext_resource type="PackedScene" uid="uid://co7m6uxgvnei7" path="res://UI2.tscn" id="12_wscrc"]
+[ext_resource type="PackedScene" uid="uid://b0tx2fk4a4mg3" path="res://GamePausedUI.tscn" id="13_hybxs"]
 [ext_resource type="PackedScene" uid="uid://bvdrjlfvmag5" path="res://Sfx.tscn" id="13_mswub"]
+[ext_resource type="PackedScene" uid="uid://ebkju5pan8o" path="res://UserData.tscn" id="14_hybxs"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_p1hux")
@@ -42,7 +43,10 @@ CameraPath = NodePath("../Camera")
 [node name="ig_ui" parent="." instance=ExtResource("10_tqoya")]
 
 [node name="GameOverUI" parent="." instance=ExtResource("11_k65ib")]
-
-[node name="GamePausedUI" parent="." instance=ExtResource("12_wscrc")]
+visible = false
 
 [node name="Sfx" parent="." instance=ExtResource("13_mswub")]
+
+[node name="GamePausedUI" parent="." instance=ExtResource("13_hybxs")]
+
+[node name="UserData" parent="." instance=ExtResource("14_hybxs")]
