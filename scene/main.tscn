@@ -10,10 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://ckuu87371tyox" path="res://scene/camera.tscn" id="6_4j5ol"]
 [ext_resource type="Script" uid="uid://du7t4j5mk0wlb" path="res://scene/BackgroundManager.cs" id="7_p1hux"]
 [ext_resource type="PackedScene" uid="uid://uny5snka3w35" path="res://scene/ingame_ui.tscn" id="10_tqoya"]
-[ext_resource type="PackedScene" uid="uid://ci7gutr4aqbye" path="res://GameOverUI.tscn" id="11_k65ib"]
-[ext_resource type="PackedScene" uid="uid://b0tx2fk4a4mg3" path="res://GamePausedUI.tscn" id="13_hybxs"]
-[ext_resource type="PackedScene" uid="uid://bvdrjlfvmag5" path="res://Sfx.tscn" id="13_mswub"]
-[ext_resource type="PackedScene" uid="uid://ebkju5pan8o" path="res://UserData.tscn" id="14_hybxs"]
+[ext_resource type="PackedScene" uid="uid://ci7gutr4aqbye" path="res://scene/GameOverUI.tscn" id="11_k65ib"]
+[ext_resource type="PackedScene" uid="uid://b0tx2fk4a4mg3" path="res://scene/GamePausedUI.tscn" id="13_hybxs"]
+[ext_resource type="PackedScene" uid="uid://bvdrjlfvmag5" path="res://scene/Sfx.tscn" id="13_mswub"]
+[ext_resource type="PackedScene" uid="uid://ebkju5pan8o" path="res://scene/UserData.tscn" id="14_hybxs"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_p1hux")

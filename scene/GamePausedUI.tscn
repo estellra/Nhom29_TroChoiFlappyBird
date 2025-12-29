@@ -3,13 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://cxe8xsha4yb6q" path="res://asset/Frame3.png" id="1_5heay"]
 [ext_resource type="Texture2D" uid="uid://cmy6ho0bwfoy" path="res://asset/LevelQuit.png" id="2_ltdqu"]
 [ext_resource type="Texture2D" uid="uid://cbgmxr76vmveq" path="res://asset/ContinueBtn.png" id="3_bb40j"]
-[ext_resource type="Script" uid="uid://h21po5o8ippy" path="res://ContinueBtn.cs" id="4_citj1"]
+[ext_resource type="Script" uid="uid://h21po5o8ippy" path="res://scene/ContinueBtn.cs" id="4_citj1"]
 [ext_resource type="Texture2D" uid="uid://dp2sak8bkm64d" path="res://asset/MenuBtn.png" id="6_53fv7"]
-[ext_resource type="Script" uid="uid://dq0p04ym0c0tg" path="res://MenuBtn.cs" id="6_ltdqu"]
+[ext_resource type="Script" uid="uid://dq0p04ym0c0tg" path="res://scene/MenuBtn.cs" id="6_ltdqu"]
 [ext_resource type="Texture2D" uid="uid://r12h7fgc0au" path="res://asset/RestartBtn.png" id="7_ltdqu"]
 [ext_resource type="Texture2D" uid="uid://st1c7lx1invm" path="res://asset/PauseBtn.png" id="8_ltdqu"]
-[ext_resource type="Script" uid="uid://b8eqwo7c8lp42" path="res://RestartButton2.cs" id="8_m1pah"]
-[ext_resource type="Script" uid="uid://cbwnxsdn580xg" path="res://PauseBtn.cs" id="9_m1pah"]
+[ext_resource type="Script" uid="uid://b8eqwo7c8lp42" path="res://scene/RestartButton2.cs" id="8_m1pah"]
+[ext_resource type="Script" uid="uid://cbwnxsdn580xg" path="res://scene/PauseBtn.cs" id="9_m1pah"]
 
 [node name="GamePausedUI" type="CanvasLayer"]
 process_mode = 3
