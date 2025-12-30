@@ -5,7 +5,6 @@ public partial class NextBtn : TextureRect
 {
 	public override void _Ready()
 	{
-		ProcessMode = ProcessModeEnum.Always;
 		MouseFilter = MouseFilterEnum.Stop;
 	}
 
@@ -16,7 +15,7 @@ public partial class NextBtn : TextureRect
 			mb.Pressed)
 		{
 			GetNode<CanvasLayer>("../..").Hide();
-			GetNode<CanvasLayer>("../../../Ranking").Show();
+			GetNode<CanvasLayer>("../../../LeaderBoard").Show();
 		}
 	}
 }

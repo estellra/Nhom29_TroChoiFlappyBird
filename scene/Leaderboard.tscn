@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=3 uid="uid://bu7qgapuptuvv"]
+
+[ext_resource type="Texture2D" uid="uid://cw1f4kilpxscs" path="res://asset/RankingFrame.png" id="1_di1xv"]
+[ext_resource type="Script" uid="uid://dpwsbv5y6ceve" path="res://scene/CloseBtn.cs" id="2_m5ukk"]
+[ext_resource type="FontFile" uid="uid://3fq0m0ua6jhr" path="res://asset/04B_19__.TTF" id="3_xhg0i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_di1xv"]
+bg_color = Color(0.8392157, 0.77254903, 0.5921569, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="LeaderBoardUI" type="CanvasLayer"]
+process_mode = 3
+layer = 2
+
+[node name="Panel" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 19.0
+offset_top = -56.999996
+offset_right = 119.31738
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9206931, 1.0762532)
+texture = ExtResource("1_di1xv")
+
+[node name="CloseBtn" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = 976.4383
+offset_top = 295.4695
+offset_right = 1253.3523
+offset_bottom = 594.2811
+scale = Vector2(0.26279366, 0.16791207)
+script = ExtResource("2_m5ukk")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 411.6464
+offset_top = 276.88654
+offset_right = 864.56604
+offset_bottom = 337.28125
+theme_override_colors/default_color = Color(0.8, 0.16470589, 0.18039216, 1)
+theme_override_fonts/normal_font = ExtResource("3_xhg0i")
+theme_override_font_sizes/normal_font_size = 72
+text = "LEADERBOARD
+"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 302.0
+offset_top = 347.0
+offset_right = 867.56934
+offset_bottom = 502.0
+scale = Vector2(0.9848484, 2.1985617)
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_di1xv")
+
+[node name="Label5" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_di1xv")
+
+[node name="Label4" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_di1xv")
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_di1xv")
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_di1xv")

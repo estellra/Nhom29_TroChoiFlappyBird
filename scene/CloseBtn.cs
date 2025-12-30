@@ -5,10 +5,9 @@ public partial class CloseBtn : TextureRect
 {
 	public override void _Ready()
 	{
-		ProcessMode = ProcessModeEnum.Always;
 		MouseFilter = MouseFilterEnum.Stop;
 	}
-
+	
 	public override void _GuiInput(InputEvent @event)
 	{
 		if (@event is InputEventMouseButton mb &&

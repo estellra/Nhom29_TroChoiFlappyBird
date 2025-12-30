@@ -5,10 +5,8 @@ public partial class PauseBtn : TextureRect
 
 	public override void _Ready()
 	{
-		ProcessMode = ProcessModeEnum.Always;
-		MouseFilter = MouseFilterEnum.Stop;
+		MouseFilter = Control.MouseFilterEnum.Stop;
 		GetNode<TextureRect>("../GamePausedPanel").Hide();
-		Show();
 	}
 
 	public override void _GuiInput(InputEvent @event)

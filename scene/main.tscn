@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dfnd8kgl3vjg7"]
+[gd_scene load_steps=18 format=3 uid="uid://dfnd8kgl3vjg7"]
 
 [ext_resource type="Script" uid="uid://byxar7unu5jln" path="res://scene/Main.cs" id="1_p1hux"]
 [ext_resource type="PackedScene" uid="uid://dthp1brjdijx0" path="res://scene/player.tscn" id="2_h2yge"]
@@ -14,8 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://b0tx2fk4a4mg3" path="res://scene/GamePausedUI.tscn" id="13_hybxs"]
 [ext_resource type="PackedScene" uid="uid://bvdrjlfvmag5" path="res://scene/Sfx.tscn" id="13_mswub"]
 [ext_resource type="PackedScene" uid="uid://ebkju5pan8o" path="res://scene/UserData.tscn" id="14_hybxs"]
+[ext_resource type="PackedScene" uid="uid://crkt7xykjppdp" path="res://scene/ProfileUI.tscn" id="15_v2gmf"]
+[ext_resource type="PackedScene" uid="uid://bu7qgapuptuvv" path="res://scene/Leaderboard.tscn" id="16_jcbur"]
+[ext_resource type="PackedScene" uid="uid://dqa5gjy4x4f4v" path="res://scene/Global.tscn" id="18_tv8i1"]
 
-[node name="main" type="Node2D"]
+[node name="Main" type="Node2D"]
 script = ExtResource("1_p1hux")
 
 [node name="PipeSpawner" parent="." instance=ExtResource("5_4j5ol")]
@@ -50,3 +53,11 @@ visible = false
 [node name="GamePausedUI" parent="." instance=ExtResource("13_hybxs")]
 
 [node name="UserData" parent="." instance=ExtResource("14_hybxs")]
+
+[node name="ProfileUI" parent="." instance=ExtResource("15_v2gmf")]
+visible = false
+
+[node name="LeaderBoard" parent="." instance=ExtResource("16_jcbur")]
+visible = false
+
+[node name="Global" parent="." instance=ExtResource("18_tv8i1")]

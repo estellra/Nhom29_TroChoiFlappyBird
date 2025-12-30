@@ -2,12 +2,9 @@ using Godot;
 using System;
 
 public partial class MenuBtn : TextureRect
-{
-	private CanvasLayer GamePausedUI;
-	
+{	
 	public override void _Ready()
 	{
-		ProcessMode = ProcessModeEnum.Always;
 		MouseFilter = MouseFilterEnum.Stop; 
 	}
 
@@ -19,7 +16,6 @@ public partial class MenuBtn : TextureRect
 		{
 			GetTree().Paused = false;
 			GetTree().ChangeSceneToFile("res://scene/title_screen.tscn");
-			
 		}
 	}
 }

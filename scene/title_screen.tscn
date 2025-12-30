@@ -60,7 +60,7 @@ script = ExtResource("3_2fir4")
 
 [node name="Player" type="AnimatedSprite2D" parent="."]
 process_mode = 3
-position = Vector2(693, 365)
+position = Vector2(574, 357)
 scale = Vector2(4.1470585, 4.3333335)
 sprite_frames = SubResource("SpriteFrames_rbyiy")
 animation = &"fly"
@@ -122,10 +122,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -140.5
-offset_top = 25.0
-offset_right = 140.5
-offset_bottom = 278.00012
+offset_left = -190.0
+offset_top = 35.0
+offset_right = 212.5
+offset_bottom = 288.00012
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
@@ -143,7 +143,7 @@ text = "START"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="TItleScreenMenu"]
+[node name="LeaderBoard" type="RichTextLabel" parent="TItleScreenMenu"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 theme_override_constants/shadow_outline_size = 3
@@ -151,7 +151,7 @@ theme_override_constants/outline_size = 12
 theme_override_fonts/normal_font = ExtResource("10_nohhj")
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
-text = "RANKING"
+text = "ONLINE LEADERBOARD"
 horizontal_alignment = 1
 vertical_alignment = 1
 

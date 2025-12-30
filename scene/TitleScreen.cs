@@ -113,6 +113,7 @@ public partial class TitleScreen : CanvasLayer
 			tree.ChangeSceneToFile("res://scene/main.tscn");
 			break;        
 			case 1:
+			GetTree().ChangeSceneToFile("res://scene/OnlineLeaderboard.tscn");	
 			break;      
 			case 2:
 			break;      

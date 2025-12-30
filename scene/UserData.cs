@@ -3,11 +3,10 @@ using System;
 
 public partial class UserData : Node
 {
-	public static string UserName;
+	public string UserName;
 	public int Score;
-	
 	private const string SAVE_PATH = "user://best_score.save";
-	public int BestScore { get; set; } = 0;
+	public int BestScore = 0;
 	
 	public override void _Ready()
 	{

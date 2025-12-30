@@ -19,8 +19,6 @@ public partial class Player : Node2D
 	private RichTextLabel diem;
 	public int point;
 	private Sfx sfx;
-	private CanvasLayer GameOverUI;
-	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Draw()
 	{
@@ -37,10 +35,7 @@ public partial class Player : Node2D
 		ground.reset();
 		point=0;
 		diem.Text=point.ToString();
-		GameOverUI = GetNode<CanvasLayer>("../GameOverUI");
-		GameOverUI.ProcessMode = ProcessModeEnum.Always;
-		GameOverUI.Hide();
-		//sfx.PlayBgm(); 
+
 	}
 	public override void _Ready()
 	{
@@ -51,9 +46,6 @@ public partial class Player : Node2D
 		this.ZIndex=2;
 		sfx = GetNode<Sfx>("../Sfx");
 		sfx.PlayBgm();
-		GameOverUI = GetNode<CanvasLayer>("../GameOverUI");
-		GameOverUI.ProcessMode = ProcessModeEnum.Always;
-		GameOverUI.Hide();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -142,13 +134,7 @@ public partial class Player : Node2D
 	GetNode<UserData>("../UserData").CheckAndSave(point);
 	dead = true;
 	sfx.PlayHit(); 
-	GameOverUI.Show();
-	GameOverUI.GetNode<TextureRect>("ScorePanel").Show();
-	GameOverUI.GetNode<TextureRect>("Medal").Show();
-	GetNode<TextureRect>("../GamePausedUI//PauseBtn").Hide();
 	main.GameOver();
-	
-	
 }
 
 

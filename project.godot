@@ -15,6 +15,11 @@ run/main_scene="uid://bt60g6crbmhn8"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://scene/Global.cs"
+SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
+
 [display]
 
 window/size/viewport_height=900
@@ -22,6 +27,10 @@ window/size/viewport_height=900
 [dotnet]
 
 project/assembly_name="TestPhysic"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/SilentWolf.gd/plugin.cfg", "res://addons/SilentWolf/plugin.cfg")
 
 [input]
 

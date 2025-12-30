@@ -38,7 +38,6 @@ public partial class Sfx : Node
 		hit.Play();
 	}
 
-
 	public void PlayPoint()
 	{
 		point.Stop();
