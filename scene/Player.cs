@@ -31,6 +31,7 @@ public partial class Player : Node2D
 		Start_Position = new Vector2(150 , (GetViewportRect().Size.Y / 2)-(GetViewportRect().Size.Y/4));
 		Position = Start_Position;
 		velocity=Vector2.Zero;
+		Rotation = 0;
 		dead=false;
 		start=true;
 		Pipes.stop=false;
@@ -46,6 +47,8 @@ public partial class Player : Node2D
 	{
 		Pipes=GetNode<PipeSpawner>("../PipeSpawner");
 		sprite=GetNode<AnimatedSprite2D>("Sprite2D");
+		int SkinDaLuu=GlobalData.SkinDangChon;
+		sprite.Play("skin_"+SkinDaLuu);
 		ground=GetNode<Ground>("../Ground");
 		diem=GetNode<RichTextLabel>("../ig_ui/Points");
 		this.ZIndex=2;
@@ -61,9 +64,9 @@ public partial class Player : Node2D
 	{
 		if(!start) return;
 		if(dead) return;
-		sprite.Play("flap");
 		Control();
 		Physic((float)delta);
+		RotateBird((float)delta);
 		CheckForCollision();
 		tinhdiem();
 		QueueRedraw();
@@ -139,17 +142,34 @@ public partial class Player : Node2D
 	private void Die()
 {
 	if (dead) return;
-	GetNode<UserData>("../UserData").CheckAndSave(point);
+	var db = new DatabaseManager();
+	db.SaveScore("Player", point);
 	dead = true;
 	sfx.PlayHit(); 
 	GameOverUI.Show();
 	GameOverUI.GetNode<TextureRect>("ScorePanel").Show();
 	GameOverUI.GetNode<TextureRect>("Medal").Show();
 	GetNode<TextureRect>("../GamePausedUI//PauseBtn").Hide();
-	main.GameOver();
-	
-	
+	if (main != null) 
+	{
+		main.GameOver();
+	}
 }
 
+private void RotateBird(float delta)
+{
+	if (velocity.Y < 0)
+	{
+		Rotation = Mathf.DegToRad(-25);
+	}
+	else if (velocity.Y > 0)
+	{
+		Rotation += 3f * delta;
+		if (Rotation > Mathf.DegToRad(90))
+		{
+			Rotation = Mathf.DegToRad(90);
+		}
+	}
+}
 
 }

@@ -15,6 +15,10 @@ run/main_scene="uid://bt60g6crbmhn8"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalData="*res://scene/GlobalData.cs"
+
 [display]
 
 window/size/viewport_height=900

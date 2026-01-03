@@ -15,8 +15,6 @@ public partial class TitleScreenGround : TextureRect
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		sprite=GetParent().GetNode<AnimatedSprite2D>("Player");
-		sprite.Play("fly");
 		float x=speed*(float)delta;
 		Position=new Vector2(Position.X+x,Position.Y);
 		if(Position.X<=-width/3)

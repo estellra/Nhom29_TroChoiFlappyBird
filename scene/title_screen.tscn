@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bt60g6crbmhn8"]
+[gd_scene load_steps=18 format=3 uid="uid://bt60g6crbmhn8"]
 
 [ext_resource type="Texture2D" uid="uid://drxoeprwsaoce" path="res://asset/bg.png" id="1_i58fu"]
 [ext_resource type="Script" uid="uid://8ed6lh0icail" path="res://scene/TitleScreen.cs" id="1_t18hh"]
@@ -8,10 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://hdlsu6amgv2j" path="res://asset/title.png" id="5_j6oad"]
 [ext_resource type="Texture2D" uid="uid://duw4ksmsaitjn" path="res://asset/yellowbird-midflap.png" id="5_t18hh"]
 [ext_resource type="Texture2D" uid="uid://g5l2tbhaycsh" path="res://asset/yellowbird-upflap.png" id="6_0ctqs"]
+[ext_resource type="Texture2D" uid="uid://ctnilng4ybpo5" path="res://asset/PigAngryBird.png" id="8_kgdf7"]
 [ext_resource type="Script" uid="uid://cusb8rsf3s4oo" path="res://scene/TenNhom.cs" id="9_0ctqs"]
+[ext_resource type="Texture2D" uid="uid://bjlsl3ycdr308" path="res://asset/SkinGoose.png" id="9_k01l3"]
+[ext_resource type="Script" uid="uid://bdow04pti4suj" path="res://scene/MenuBird.cs" id="10_k01l3"]
 [ext_resource type="FontFile" uid="uid://3fq0m0ua6jhr" path="res://asset/04B_19__.TTF" id="10_nohhj"]
 [ext_resource type="FontFile" uid="uid://bxy3cry7618ld" path="res://asset/PrStart.ttf" id="10_rbyiy"]
 [ext_resource type="Script" uid="uid://d3sxnqq4tslcy" path="res://scene/TitleScreenState1.cs" id="12_t65bv"]
+[ext_resource type="Texture2D" uid="uid://c87pf5ye413de" path="res://asset/Arrow.png" id="13_tn2ht"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rbyiy"]
 animations = [{
@@ -26,7 +30,23 @@ animations = [{
 "texture": ExtResource("6_0ctqs")
 }],
 "loop": true,
-"name": &"fly",
+"name": &"skin_0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_kgdf7")
+}],
+"loop": true,
+"name": &"skin_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_k01l3")
+}],
+"loop": true,
+"name": &"skin_2",
 "speed": 5.0
 }]
 
@@ -60,10 +80,11 @@ script = ExtResource("3_2fir4")
 
 [node name="Player" type="AnimatedSprite2D" parent="."]
 process_mode = 3
-position = Vector2(693, 365)
-scale = Vector2(4.1470585, 4.3333335)
+position = Vector2(564, 398.5)
+scale = Vector2(1.872341, 2.3939393)
 sprite_frames = SubResource("SpriteFrames_rbyiy")
-animation = &"fly"
+animation = &"skin_2"
+script = ExtResource("10_k01l3")
 
 [node name="Title" type="TextureRect" parent="."]
 anchors_preset = 5
@@ -178,3 +199,23 @@ bbcode_enabled = true
 text = "QUIT"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="btnLeft" type="TextureButton" parent="."]
+offset_left = 368.0
+offset_top = 456.0
+offset_right = 513.0
+offset_bottom = 587.0
+rotation = -1.5707964
+texture_normal = ExtResource("13_tn2ht")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="btnRight" type="TextureButton" parent="."]
+offset_left = 774.0
+offset_top = 326.0
+offset_right = 923.3004
+offset_bottom = 457.67743
+rotation = 1.5707964
+texture_normal = ExtResource("13_tn2ht")
+ignore_texture_size = true
+stretch_mode = 4

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dfnd8kgl3vjg7"]
+[gd_scene load_steps=21 format=3 uid="uid://dfnd8kgl3vjg7"]
 
 [ext_resource type="Script" uid="uid://byxar7unu5jln" path="res://scene/Main.cs" id="1_p1hux"]
 [ext_resource type="PackedScene" uid="uid://dthp1brjdijx0" path="res://scene/player.tscn" id="2_h2yge"]
@@ -8,12 +8,50 @@
 [ext_resource type="PackedScene" uid="uid://dq8p1s4ihufce" path="res://scene/pipe_spawner.tscn" id="5_4j5ol"]
 [ext_resource type="Script" uid="uid://7ujm3ywbpo3p" path="res://scene/Ground.cs" id="5_b5f6u"]
 [ext_resource type="PackedScene" uid="uid://ckuu87371tyox" path="res://scene/camera.tscn" id="6_4j5ol"]
+[ext_resource type="Texture2D" uid="uid://c45bx0frgrnng" path="res://asset/yellowbird-downflap.png" id="7_0vlqb"]
 [ext_resource type="Script" uid="uid://du7t4j5mk0wlb" path="res://scene/BackgroundManager.cs" id="7_p1hux"]
+[ext_resource type="Texture2D" uid="uid://duw4ksmsaitjn" path="res://asset/yellowbird-midflap.png" id="8_gjnwh"]
+[ext_resource type="Texture2D" uid="uid://g5l2tbhaycsh" path="res://asset/yellowbird-upflap.png" id="9_fdqew"]
+[ext_resource type="Texture2D" uid="uid://ctnilng4ybpo5" path="res://asset/PigAngryBird.png" id="10_0d4pv"]
 [ext_resource type="PackedScene" uid="uid://uny5snka3w35" path="res://scene/ingame_ui.tscn" id="10_tqoya"]
+[ext_resource type="Texture2D" uid="uid://bjlsl3ycdr308" path="res://asset/SkinGoose.png" id="11_gtqqq"]
 [ext_resource type="PackedScene" uid="uid://ci7gutr4aqbye" path="res://GameOverUI.tscn" id="11_k65ib"]
 [ext_resource type="PackedScene" uid="uid://b0tx2fk4a4mg3" path="res://GamePausedUI.tscn" id="13_hybxs"]
 [ext_resource type="PackedScene" uid="uid://bvdrjlfvmag5" path="res://Sfx.tscn" id="13_mswub"]
 [ext_resource type="PackedScene" uid="uid://ebkju5pan8o" path="res://UserData.tscn" id="14_hybxs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gn2wi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_0vlqb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_gjnwh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fdqew")
+}],
+"loop": true,
+"name": &"skin_0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_0d4pv")
+}],
+"loop": true,
+"name": &"skin_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_gtqqq")
+}],
+"loop": true,
+"name": &"skin_2",
+"speed": 5.0
+}]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_p1hux")
@@ -33,6 +71,10 @@ script = ExtResource("5_b5f6u")
 [node name="Player" parent="." instance=ExtResource("2_h2yge")]
 position = Vector2(201, 328)
 
+[node name="Sprite2D" parent="Player" index="0"]
+sprite_frames = SubResource("SpriteFrames_gn2wi")
+animation = &"skin_0"
+
 [node name="Camera" parent="." instance=ExtResource("6_4j5ol")]
 
 [node name="BackgroundManager" type="Node2D" parent="."]
@@ -50,3 +92,5 @@ visible = false
 [node name="GamePausedUI" parent="." instance=ExtResource("13_hybxs")]
 
 [node name="UserData" parent="." instance=ExtResource("14_hybxs")]
+
+[editable path="Player"]
