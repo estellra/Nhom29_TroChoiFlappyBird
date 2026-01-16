@@ -3,9 +3,12 @@ using System;
 
 public partial class NextBtn : TextureRect
 {
+	private UserData userData;
+	
 	public override void _Ready()
 	{
 		MouseFilter = MouseFilterEnum.Stop;
+		userData = GetNode<UserData>("../../../UserData");
 	}
 
 	public override void _GuiInput(InputEvent @event)
@@ -15,7 +18,9 @@ public partial class NextBtn : TextureRect
 			mb.Pressed)
 		{
 			GetNode<CanvasLayer>("../..").Hide();
-			GetNode<CanvasLayer>("../../../LeaderBoard").Show();
+			GetNode<CanvasLayer>("../../../LeaderboardUI").Show();
+			GetNode<LeaderboardUI>("../../../LeaderboardUI").Refresh();
+			Leaderboard.AddScore(userData.UserName, userData.BestScore);
 		}
 	}
 }

@@ -22,6 +22,7 @@ public partial class GameOverUI : CanvasLayer
 		copper= GetNode<TextureRect>("Medal/Copper");
 		silver= GetNode<TextureRect>("Medal/Silver");
 		gold= GetNode<TextureRect>("Medal/Gold");
+		
 	}
 
 	public override void _Process(double delta)
@@ -42,7 +43,7 @@ public partial class GameOverUI : CanvasLayer
 		if (data.BestScore != player.point)
 			status.Hide();
 		else
-			Show();;
+			status.Show();;
 	}
 	
 	public void ShowMedal()

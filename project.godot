@@ -17,8 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Global="*res://scene/Global.cs"
-SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
+Leaderboard="*res://scene/Leaderboard.cs"
 
 [display]
 
@@ -30,7 +29,7 @@ project/assembly_name="TestPhysic"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/SilentWolf.gd/plugin.cfg", "res://addons/SilentWolf/plugin.cfg")
+enabled=PackedStringArray("res://addons/SilentWolf/plugin.cfg")
 
 [input]
 

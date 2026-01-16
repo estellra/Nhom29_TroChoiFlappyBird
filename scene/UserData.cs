@@ -4,9 +4,10 @@ using System;
 public partial class UserData : Node
 {
 	public string UserName;
-	public int Score;
+	
 	private const string SAVE_PATH = "user://best_score.save";
-	public int BestScore = 0;
+	private const string SAVE_PATH_2 = "user://user_name.save";
+	public int BestScore { get; set; } = 0;
 	
 	public override void _Ready()
 	{
@@ -27,6 +28,11 @@ public partial class UserData : Node
 		using var file = FileAccess.Open(SAVE_PATH, FileAccess.ModeFlags.Write);
 		file.Store32((uint)BestScore);
 	}
+	
+	public void SaveUserName(){
+		using var file = FileAccess.Open(SAVE_PATH_2, FileAccess.ModeFlags.Write);
+		   file.StoreString(UserName + "\n");
+	} 
 
 	private void LoadBestScore()
 	{

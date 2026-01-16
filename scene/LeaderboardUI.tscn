@@ -1,0 +1,163 @@
+[gd_scene load_steps=7 format=3 uid="uid://bu7qgapuptuvv"]
+
+[ext_resource type="Script" uid="uid://cv8t5yx6lccw" path="res://scene/LeaderboardUI.cs" id="1_664ww"]
+[ext_resource type="Texture2D" uid="uid://cw1f4kilpxscs" path="res://asset/RankingFrame.png" id="1_di1xv"]
+[ext_resource type="Script" uid="uid://dpwsbv5y6ceve" path="res://scene/CloseBtn.cs" id="2_m5ukk"]
+[ext_resource type="FontFile" uid="uid://3fq0m0ua6jhr" path="res://asset/04B_19__.TTF" id="3_xhg0i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_664ww"]
+bg_color = Color(0.84313726, 0.77254903, 0.5921569, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2c0b0"]
+bg_color = Color(0.83137256, 0.7607843, 0.5803922, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[node name="LeaderboardUI" type="CanvasLayer"]
+process_mode = 3
+layer = 2
+script = ExtResource("1_664ww")
+
+[node name="BoardPanel" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 19.0
+offset_top = -56.999996
+offset_right = 119.31738
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9206931, 1.0762532)
+texture = ExtResource("1_di1xv")
+
+[node name="CloseBtn" type="TextureRect" parent="BoardPanel"]
+layout_mode = 0
+offset_left = 846.10175
+offset_top = 47.386612
+offset_right = 2003.3096
+offset_bottom = 1980.4332
+scale = Vector2(0.33789068, 0.2528302)
+script = ExtResource("2_m5ukk")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BoardPanel"]
+layout_mode = 0
+offset_left = 411.6464
+offset_top = 276.88654
+offset_right = 1292.5045
+offset_bottom = 337.28125
+theme_override_colors/default_color = Color(0.8, 0.16470589, 0.18039216, 1)
+theme_override_fonts/normal_font = ExtResource("3_xhg0i")
+theme_override_font_sizes/normal_font_size = 72
+text = "LEADERBOARD
+"
+
+[node name="Scroll" type="ScrollContainer" parent="BoardPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 300.86035
+offset_top = 429.26697
+offset_right = -278.7196
+offset_bottom = -484.18958
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.94255304, 2.4879656)
+
+[node name="List" type="VBoxContainer" parent="BoardPanel/Scroll"]
+custom_minimum_size = Vector2(600, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Template" type="Label" parent="BoardPanel/Scroll/List"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_664ww")
+
+[node name="Tem" type="HBoxContainer" parent="BoardPanel/Scroll/List/Template"]
+layout_mode = 0
+offset_left = 8.150017
+offset_top = 2.7309723
+offset_right = 680.15
+offset_bottom = 22.730972
+scale = Vector2(0.9884167, 0.8927907)
+size_flags_vertical = 6
+
+[node name="No" type="Label" parent="BoardPanel/Scroll/List/Template/Tem"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_xhg0i")
+theme_override_font_sizes/font_size = 19
+text = "  NO"
+vertical_alignment = 2
+
+[node name="Name" type="Label" parent="BoardPanel/Scroll/List/Template/Tem"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_xhg0i")
+theme_override_font_sizes/font_size = 19
+text = "NAME"
+vertical_alignment = 2
+
+[node name="BestScore" type="Label" parent="BoardPanel/Scroll/List/Template/Tem"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_xhg0i")
+theme_override_font_sizes/font_size = 19
+text = "BEST SCORE"
+vertical_alignment = 2
+
+[node name="Label" type="Label" parent="BoardPanel"]
+layout_mode = 0
+offset_left = 305.2048
+offset_top = 367.01407
+offset_right = 344.1326
+offset_bottom = 390.0141
+scale = Vector2(15.820064, 2.3717313)
+theme_override_styles/normal = SubResource("StyleBoxFlat_2c0b0")
+
+[node name="Tag" type="HBoxContainer" parent="BoardPanel/Label"]
+layout_mode = 0
+offset_right = 347.96982
+offset_bottom = 27.249245
+scale = Vector2(0.111673914, 0.79094815)
+size_flags_vertical = 6
+
+[node name="No" type="Label" parent="BoardPanel/Label/Tag"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_xhg0i")
+theme_override_font_sizes/font_size = 19
+text = " NO"
+vertical_alignment = 2
+
+[node name="Name" type="Label" parent="BoardPanel/Label/Tag"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_xhg0i")
+theme_override_font_sizes/font_size = 19
+text = "NAME"
+vertical_alignment = 2
+
+[node name="BestScore" type="Label" parent="BoardPanel/Label/Tag"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_xhg0i")
+theme_override_font_sizes/font_size = 19
+text = "BEST SCORE"
+vertical_alignment = 2

@@ -14,9 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://b0tx2fk4a4mg3" path="res://scene/GamePausedUI.tscn" id="13_hybxs"]
 [ext_resource type="PackedScene" uid="uid://bvdrjlfvmag5" path="res://scene/Sfx.tscn" id="13_mswub"]
 [ext_resource type="PackedScene" uid="uid://ebkju5pan8o" path="res://scene/UserData.tscn" id="14_hybxs"]
-[ext_resource type="PackedScene" uid="uid://crkt7xykjppdp" path="res://scene/ProfileUI.tscn" id="15_v2gmf"]
-[ext_resource type="PackedScene" uid="uid://bu7qgapuptuvv" path="res://scene/Leaderboard.tscn" id="16_jcbur"]
-[ext_resource type="PackedScene" uid="uid://dqa5gjy4x4f4v" path="res://scene/Global.tscn" id="18_tv8i1"]
+[ext_resource type="PackedScene" uid="uid://rdgq50qq62d0" path="res://scene/ProfileUI.tscn" id="15_v2gmf"]
+[ext_resource type="PackedScene" uid="uid://bu7qgapuptuvv" path="res://scene/LeaderboardUI.tscn" id="16_jcbur"]
+[ext_resource type="PackedScene" uid="uid://bbiyg4kpgymlb" path="res://scene/Leaderboard.tscn" id="17_smf0o"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_p1hux")
@@ -57,7 +57,7 @@ visible = false
 [node name="ProfileUI" parent="." instance=ExtResource("15_v2gmf")]
 visible = false
 
-[node name="LeaderBoard" parent="." instance=ExtResource("16_jcbur")]
+[node name="LeaderboardUI" parent="." instance=ExtResource("16_jcbur")]
 visible = false
 
-[node name="Global" parent="." instance=ExtResource("18_tv8i1")]
+[node name="Leaderboard" parent="." instance=ExtResource("17_smf0o")]

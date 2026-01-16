@@ -136,6 +136,4 @@ public partial class Player : Node2D
 	sfx.PlayHit(); 
 	main.GameOver();
 }
-
-
 }
