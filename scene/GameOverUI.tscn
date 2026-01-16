@@ -1,0 +1,186 @@
+[gd_scene load_steps=13 format=3 uid="uid://ci7gutr4aqbye"]
+
+[ext_resource type="Script" uid="uid://bh5vati556w3h" path="res://scene/GameOverUI.cs" id="1_xrxal"]
+[ext_resource type="FontFile" uid="uid://3fq0m0ua6jhr" path="res://asset/04B_19__.TTF" id="5_mcikm"]
+[ext_resource type="Script" uid="uid://gl2qmmgnqqi0" path="res://scene/LeaderBoardButton.cs" id="8_p5xhv"]
+[ext_resource type="Texture2D" uid="uid://lobtwk13cn3n" path="res://asset/GameOverPanel.png" id="12_v3brr"]
+[ext_resource type="Script" uid="uid://ccs35imgdt6if" path="res://scene/GameOverRestartButton.cs" id="13_xvro8"]
+[ext_resource type="Texture2D" uid="uid://c635bjyp8wkpb" path="res://asset/gameover.png" id="16_54m0g"]
+[ext_resource type="Texture2D" uid="uid://bc34hs5bgcvpu" path="res://asset/RestartButton.png" id="16_plv3a"]
+[ext_resource type="Texture2D" uid="uid://cfxyuejd34fy8" path="res://asset/RankingButton.png" id="18_54m0g"]
+[ext_resource type="Texture2D" uid="uid://bj63qxulabgit" path="res://asset/BestStatus.png" id="20_p3h76"]
+[ext_resource type="Texture2D" uid="uid://cyxvsiosefmmh" path="res://asset/Gold.png" id="23_fdncv"]
+[ext_resource type="Texture2D" uid="uid://yibh72g27dh7" path="res://asset/Copper.png" id="24_l03sm"]
+[ext_resource type="Texture2D" uid="uid://ddkb3v1j4s2xj" path="res://asset/Silver.png" id="25_gajqf"]
+
+[node name="GameOverUI" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_xrxal")
+
+[node name="ScorePanel" type="TextureRect" parent="."]
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -395.0
+offset_top = -146.0
+offset_right = 983.0
+offset_bottom = 573.62976
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5928426, 0.45991504)
+texture = ExtResource("12_v3brr")
+stretch_mode = 5
+
+[node name="ScoreNumber" type="RichTextLabel" parent="ScorePanel"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -236.04431
+offset_top = -242.40187
+offset_right = -77.486206
+offset_bottom = 57.598145
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0.007843138, 1)
+theme_override_constants/shadow_outline_size = 15
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("5_mcikm")
+theme_override_font_sizes/normal_font_size = 99
+text = "0
+
+"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BestNumber" type="RichTextLabel" parent="ScorePanel"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 0
+offset_left = 1141.9558
+offset_top = 373.98212
+offset_right = 1300.5139
+offset_bottom = 673.98206
+size_flags_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0.007843138, 1)
+theme_override_constants/shadow_outline_size = 15
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("5_mcikm")
+theme_override_font_sizes/normal_font_size = 99
+text = "0
+
+"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOverTitle" type="TextureRect" parent="ScorePanel"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -520.32117
+offset_top = -345.71603
+offset_right = 683.41296
+offset_bottom = -66.56381
+grow_horizontal = 2
+scale = Vector2(0.87597585, 1.1138262)
+texture = ExtResource("16_54m0g")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Btn" type="HBoxContainer" parent="ScorePanel"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -496.70612
+offset_top = 394.6723
+offset_right = 3000.294
+offset_bottom = 1077.3853
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2813465, 0.18556434)
+theme_override_constants/separation = 800
+
+[node name="GameOverRestartButton" type="TextureRect" parent="ScorePanel/Btn"]
+process_mode = 3
+layout_mode = 2
+texture = ExtResource("16_plv3a")
+script = ExtResource("13_xvro8")
+
+[node name="RankingButton" type="TextureRect" parent="ScorePanel/Btn"]
+process_mode = 3
+layout_mode = 2
+texture = ExtResource("18_54m0g")
+script = ExtResource("8_p5xhv")
+
+[node name="BestStatus" type="TextureRect" parent="ScorePanel"]
+process_mode = 3
+layout_mode = 0
+offset_left = 865.322
+offset_top = 363.11053
+offset_right = 1007.99854
+offset_bottom = 439.56525
+scale = Vector2(1.0640246, 1.0806916)
+size_flags_vertical = 0
+texture = ExtResource("20_p3h76")
+
+[node name="Medal" type="TextureRect" parent="."]
+offset_left = 14.0
+offset_top = -36.0
+offset_right = 54.0
+offset_bottom = 4.0
+
+[node name="Gold" type="TextureRect" parent="Medal"]
+process_mode = 3
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 0
+offset_left = 250.0
+offset_top = 462.03644
+offset_right = 394.0
+offset_bottom = 607.03644
+scale = Vector2(1.2362362, 0.8543673)
+size_flags_vertical = 0
+texture = ExtResource("24_l03sm")
+
+[node name="Silver" type="TextureRect" parent="Medal"]
+process_mode = 3
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 0
+offset_left = 252.0
+offset_top = 454.99997
+offset_right = 398.0
+offset_bottom = 601.0
+scale = Vector2(1.1885448, 0.917948)
+size_flags_vertical = 0
+texture = ExtResource("25_gajqf")
+
+[node name="Copper" type="TextureRect" parent="Medal"]
+process_mode = 3
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 249.00002
+offset_top = 438.0
+offset_right = 404.7215
+offset_bottom = 582.0
+grow_vertical = 2
+scale = Vector2(1.1315119, 0.95042187)
+size_flags_vertical = 0
+texture = ExtResource("23_fdncv")

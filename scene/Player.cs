@@ -42,10 +42,6 @@ public partial class Player : Node2D
 		ground.reset();
 		point=0;
 		diem.Text=point.ToString();
-		GameOverUI = GetNode<CanvasLayer>("../GameOverUI");
-		GameOverUI.ProcessMode = ProcessModeEnum.Always;
-		GameOverUI.Hide();
-		//sfx.PlayBgm(); 
 	}
 	public override void _Ready()
 	{
@@ -59,9 +55,6 @@ public partial class Player : Node2D
 		this.ZIndex=2;
 		sfx = GetNode<Sfx>("../Sfx");
 		sfx.PlayBgm();
-		GameOverUI = GetNode<CanvasLayer>("../GameOverUI");
-		GameOverUI.ProcessMode = ProcessModeEnum.Always;
-		GameOverUI.Hide();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -163,12 +156,9 @@ public partial class Player : Node2D
 	if (dead) return;
 	var db = new DatabaseManager();
 	db.SaveScore("Player", point);
+	GetNode<UserData>("../UserData").CheckAndSave(point);
 	dead = true;
 	sfx.PlayHit(); 
-	GameOverUI.Show();
-	GameOverUI.GetNode<TextureRect>("ScorePanel").Show();
-	GameOverUI.GetNode<TextureRect>("Medal").Show();
-	GetNode<TextureRect>("../GamePausedUI//PauseBtn").Hide();
 	if (main != null) 
 	{
 		main.GameOver();

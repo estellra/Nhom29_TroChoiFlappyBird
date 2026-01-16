@@ -1,0 +1,88 @@
+[gd_scene load_steps=9 format=3 uid="uid://crkt7xykjppdp"]
+
+[ext_resource type="Script" uid="uid://dc771oyww4yne" path="res://scene/ProfileUI.cs" id="1_aj5xl"]
+[ext_resource type="Texture2D" uid="uid://cray60tti647a" path="res://asset/NameTag.png" id="2_5b1jl"]
+[ext_resource type="FontFile" uid="uid://3fq0m0ua6jhr" path="res://asset/04B_19__.TTF" id="3_ffwa6"]
+[ext_resource type="Texture2D" uid="uid://brlh2ihrqn7at" path="res://asset/NextButton.png" id="4_wjafo"]
+[ext_resource type="Script" uid="uid://bmuyi2vhgcywi" path="res://scene/NextBtn.cs" id="5_qeyia"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6alll"]
+bg_color = Color(0.93333334, 0.22352941, 0.003921569, 0.15686275)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ikk8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m8mum"]
+
+[node name="ProfileUI" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_aj5xl")
+
+[node name="ProfilePanel" type="TextureRect" parent="."]
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -492.0
+offset_top = -514.0
+offset_right = 1044.0
+offset_bottom = 734.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6554523, 0.8878664)
+texture = ExtResource("2_5b1jl")
+stretch_mode = 5
+
+[node name="ProfileText" type="RichTextLabel" parent="ProfilePanel"]
+process_mode = 3
+layout_mode = 0
+offset_left = 623.9965
+offset_top = 441.50787
+offset_right = 765.7795
+offset_bottom = 516.5078
+scale = Vector2(2.4027379, 2.3196855)
+theme_override_colors/default_color = Color(0.60784316, 0.2509804, 0.23137255, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_ffwa6")
+theme_override_font_sizes/normal_font_size = 24
+text = "YOUR NAME"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NextBtn" type="TextureRect" parent="ProfilePanel"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -814.3609
+offset_top = 682.53516
+offset_right = 721.63965
+offset_bottom = 1706.5349
+grow_horizontal = 0
+scale = Vector2(0.06442751, 0.054536276)
+texture = ExtResource("4_wjafo")
+script = ExtResource("5_qeyia")
+
+[node name="UserName" type="LineEdit" parent="ProfilePanel"]
+layout_mode = 0
+offset_left = 422.60895
+offset_top = 567.65295
+offset_right = 701.7948
+offset_bottom = 600.65295
+scale = Vector2(2.4427168, 2.2342947)
+theme_override_colors/font_color = Color(18.892, 18.892, 18.892, 1)
+theme_override_colors/font_selected_color = Color(0.60784316, 0.25490198, 0.22352941, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ffwa6")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_6alll")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_4ikk8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m8mum")
+text = "  "

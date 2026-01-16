@@ -9,8 +9,10 @@ public partial class Main : Node2D
 	private bool menu=true;
 	private Player player;
 	private PipeSpawner pipes;
+	private CanvasLayer gameOverUI;
+	private TextureRect pausebtn;
 	
-	/*public override void _Input(InputEvent input)
+		/*public override void _Input(InputEvent input)
 	{
 		if(!gameover) return;
 		if (input is InputEventKey keyEvent && keyEvent.Pressed && !keyEvent.Echo)
@@ -20,7 +22,6 @@ public partial class Main : Node2D
 			gameover = false;
 			play = true;
 			menu=false;
-			GetNode<TextureRect>("GamePausedUI//PauseBtn").Show();
 		}
 	}*/
 	
@@ -29,6 +30,8 @@ public partial class Main : Node2D
 	{
 		 player = GetNode<Player>("Player");
 		 pipes = GetNode<PipeSpawner>("PipeSpawner");
+		gameOverUI = GetNode<CanvasLayer>("GameOverUI");
+		pausebtn = GetNode<TextureRect>("GamePausedUI/PauseBtn");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -71,21 +74,8 @@ public partial class Main : Node2D
 		gameover=true;
 		pause=false;
 		menu=false;
+		gameOverUI.Show();
+		pausebtn.Hide();
+		GetNode<TextureRect>("GameOverUI/ScorePanel").Show();
 	}
-	
-	public void Restart()
-{
-	if(!gameover) return;
-	pipes.ClearPipe();
-	player.Start();
-
-	play = true;
-	gameover = false;
-	pause = false;
-	menu = false;
-
-	GetNode<TextureRect>("GameOverUI/ScorePanel").Hide();
-	GetNode<TextureRect>("GameOverUI/Medal").Hide();
-	GetNode<TextureRect>("GamePausedUI/PauseBtn").Show();
-}
 }
