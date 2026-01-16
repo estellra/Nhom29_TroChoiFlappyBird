@@ -39,7 +39,7 @@ public partial class PipeSpawner : Node2D
 		GetParent().AddChild(pipe); 
 		float centerY = (float)rng.NextDouble() * (MaxY - MinY) + MinY;
 		pipe.Setup(centerY, SpawnGap);
-		pipe.Position = new Vector2(Player.GlobalPosition.X + 500, 0);
+		pipe.Position = new Vector2(Player.GlobalPosition.X + 1000, 0);
 		PipeList.Add(pipe);
 	}
 	

@@ -27,6 +27,6 @@ script = ExtResource("1_onrkg")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(5, -5)
-scale = Vector2(3.1050587, 3.887333)
+scale = Vector2(2.284, 2.86)
 sprite_frames = SubResource("SpriteFrames_ct4mp")
 animation = &"flap"

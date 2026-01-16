@@ -137,7 +137,7 @@ public partial class TitleScreen : CanvasLayer
 			case 0:
 				GlobalData.SkinDangChon = SkinIdx;
 				SceneTree tree = GetTree();
-				tree.ChangeSceneToFile("res://scene/level_select.tscn");
+				tree.ChangeSceneToFile("res://scene/main.tscn");
 				break;
 			case 1:
 				break;

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmjolvthq3sh1"]
+
+[ext_resource type="Script" uid="uid://se2qou5i7mdm" path="res://scene/CatSpawner.cs" id="1_fcpai"]
+
+[node name="CatSpawner" type="Node2D"]
+script = ExtResource("1_fcpai")

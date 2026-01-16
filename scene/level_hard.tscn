@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bitgi2ris7426"]
+[gd_scene load_steps=23 format=3 uid="uid://bitgi2ris7426"]
 
 [ext_resource type="Script" uid="uid://byxar7unu5jln" path="res://scene/Main.cs" id="1_vr72e"]
 [ext_resource type="PackedScene" uid="uid://dq8p1s4ihufce" path="res://scene/pipe_spawner.tscn" id="2_tlej2"]
@@ -19,6 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://bvdrjlfvmag5" path="res://Sfx.tscn" id="17_xlc4u"]
 [ext_resource type="PackedScene" uid="uid://b0tx2fk4a4mg3" path="res://GamePausedUI.tscn" id="18_fyu5r"]
 [ext_resource type="PackedScene" uid="uid://ebkju5pan8o" path="res://UserData.tscn" id="19_j5opd"]
+[ext_resource type="PackedScene" uid="uid://yxkdxb8jyh40" path="res://scene/cat.tscn" id="20_mg788"]
+[ext_resource type="PackedScene" uid="uid://bmjolvthq3sh1" path="res://scene/cat_spawner.tscn" id="21_hbqb8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gn2wi"]
 animations = [{
@@ -92,5 +94,10 @@ visible = false
 [node name="GamePausedUI" parent="." instance=ExtResource("18_fyu5r")]
 
 [node name="UserData" parent="." instance=ExtResource("19_j5opd")]
+
+[node name="Cat" parent="." instance=ExtResource("20_mg788")]
+position = Vector2(-1340, -654)
+
+[node name="CatSpawner" parent="." instance=ExtResource("21_hbqb8")]
 
 [editable path="Player"]

@@ -7,12 +7,13 @@ public partial class Player : Node2D
 	private float gravity=700;
 	private float speed=200;
 	private float jump=-350;
-	private float radiushitbox=44 ;
+	private float radiushitbox=32 ;
 	public bool dead;
 	private bool start;
 	private float Waiting_Time;
 	private Vector2 Start_Position;
 	private PipeSpawner Pipes;
+	private CatSpawner Cats;
 	private AnimatedSprite2D sprite;
 	private Ground ground;
 	private Main main;
@@ -28,6 +29,8 @@ public partial class Player : Node2D
 	}
 	public void Start()
 	{
+		Pipes.ClearPipe();
+		Cats.ClearCat();
 		Start_Position = new Vector2(150 , (GetViewportRect().Size.Y / 2)-(GetViewportRect().Size.Y/4));
 		Position = Start_Position;
 		velocity=Vector2.Zero;
@@ -35,6 +38,7 @@ public partial class Player : Node2D
 		dead=false;
 		start=true;
 		Pipes.stop=false;
+		Cats.stop=false;
 		ground.reset();
 		point=0;
 		diem.Text=point.ToString();
@@ -46,6 +50,7 @@ public partial class Player : Node2D
 	public override void _Ready()
 	{
 		Pipes=GetNode<PipeSpawner>("../PipeSpawner");
+		Cats=GetNode<CatSpawner>("../CatSpawner");
 		sprite=GetNode<AnimatedSprite2D>("Sprite2D");
 		int SkinDaLuu=GlobalData.SkinDangChon;
 		sprite.Play("skin_"+SkinDaLuu);
@@ -66,7 +71,6 @@ public partial class Player : Node2D
 		if(dead) return;
 		Control();
 		Physic((float)delta);
-		RotateBird((float)delta);
 		CheckForCollision();
 		tinhdiem();
 		QueueRedraw();
@@ -99,6 +103,7 @@ public partial class Player : Node2D
 					ground.dead=true;
 					velocity=new Vector2(0, 0);
 					Pipes.stop=true;
+					Cats.stop=true;
 					Die();
 					//return;
 		}
@@ -110,8 +115,22 @@ public partial class Player : Node2D
 					ground.dead=true;
 					velocity= new Vector2(0,velocity.Y);
 					Pipes.stop=true;
+					Cats.stop=true;
 					Die();
 					//break;
+				}
+		}
+		if(Cats==null) return;
+		foreach(Cat cat in Cats.CatList)
+		{
+			if(Collision(getCenter(),radiushitbox,cat.meomeo))
+				{
+					ground.dead=true;
+					velocity= new Vector2(0,velocity.Y);
+					Pipes.stop=true;
+					Cats.stop=true;
+					Die();
+					return;
 				}
 		}
 	}
@@ -156,20 +175,6 @@ public partial class Player : Node2D
 	}
 }
 
-private void RotateBird(float delta)
-{
-	if (velocity.Y < 0)
-	{
-		Rotation = Mathf.DegToRad(-25);
-	}
-	else if (velocity.Y > 0)
-	{
-		Rotation += 3f * delta;
-		if (Rotation > Mathf.DegToRad(90))
-		{
-			Rotation = Mathf.DegToRad(90);
-		}
-	}
-}
+
 
 }
