@@ -50,11 +50,11 @@ public partial class GameOverUI : CanvasLayer
 	{
 		if (player.point >=0)
 			copper.Show();
-		if (player.point >=1){
+		if (player.point >=5){
 			copper.Hide();
 			silver.Show();
 			}
-		if (player.point >= 2){
+		if (player.point >= 10){
 			silver.Hide();
 			gold.Show();
 	}

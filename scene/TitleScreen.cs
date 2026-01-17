@@ -31,20 +31,27 @@ public partial class TitleScreen : CanvasLayer
 		menus = new List<RichTextLabel>();
 		index = -1;
 		VBoxContainer item = GetNode<VBoxContainer>("TItleScreenMenu");
+		int j=0;
 		foreach (var i in item.GetChildren())
 		{
 			if (i is RichTextLabel label)
 			{
-				menus.Add(label);
+				int temp=j;
 				label.SetMeta("original_text", label.Text);
+				label.MouseEntered += () => hover(temp);
+				label.GuiInput += (InputEvent e) =>
+				{
+					if (e is InputEventMouseButton mb && mb.Pressed && mb.ButtonIndex == MouseButton.Left)
+						{
+							enter(index);
+						}
+				};
+				menus.Add(label);
+				j++;
 			}
 		}
-		if (menus.Count > 0)
-		{
 			index = -1;
 			updatehighlight();
-		}
-
 		var btnLeft = GetNode<TextureButton>("btnLeft");
 		var btnRight = GetNode<TextureButton>("btnRight");
 		btnLeft.Pressed += OnLeftPressed;
@@ -112,6 +119,13 @@ public partial class TitleScreen : CanvasLayer
 		{
 			index += menus.Count;
 		}
+		updatehighlight();
+	}
+	private void hover(int newindex)
+	{
+		if (newindex == index) return;
+		removehighlight(menus[index]);
+		index = newindex;
 		updatehighlight();
 	}
 

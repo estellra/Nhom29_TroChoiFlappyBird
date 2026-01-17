@@ -39,10 +39,10 @@ texture = ExtResource("1_di1xv")
 
 [node name="CloseBtn" type="TextureRect" parent="BoardPanel"]
 layout_mode = 0
-offset_left = 846.10175
-offset_top = 47.386612
-offset_right = 2003.3096
-offset_bottom = 1980.4332
+offset_left = 974.26605
+offset_top = 283.39056
+offset_right = 1253.9244
+offset_bottom = 577.3901
 scale = Vector2(0.33789068, 0.2528302)
 script = ExtResource("2_m5ukk")
 
@@ -50,7 +50,7 @@ script = ExtResource("2_m5ukk")
 layout_mode = 0
 offset_left = 411.6464
 offset_top = 276.88654
-offset_right = 1292.5045
+offset_right = 877.59973
 offset_bottom = 337.28125
 theme_override_colors/default_color = Color(0.8, 0.16470589, 0.18039216, 1)
 theme_override_fonts/normal_font = ExtResource("3_xhg0i")

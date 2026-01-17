@@ -23,7 +23,6 @@ public partial class DatabaseManager : Node
 	public void SaveScore(string playerName, int score)
 	{
 		if (string.IsNullOrEmpty(connectionString)) return;
-
 		try
 		{
 			using (SqlConnection conn = new SqlConnection(connectionString))
