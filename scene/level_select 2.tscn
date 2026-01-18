@@ -1,0 +1,140 @@
+[gd_scene load_steps=13 format=3 uid="uid://7q2m7bax36v2"]
+
+[ext_resource type="Script" uid="uid://5cixffkpbpny" path="res://scene/LevelSelect.cs" id="1_jcnwc"]
+[ext_resource type="Texture2D" uid="uid://ctk4shio13ps4" path="res://asset/bg_level.png" id="2_w7ar2"]
+[ext_resource type="Texture2D" uid="uid://px0t3awl2eg5" path="res://asset/easy_daden.jpg" id="3_sxlbb"]
+[ext_resource type="Texture2D" uid="uid://d36rkki8i73nm" path="res://asset/ easy.png" id="4_5034v"]
+[ext_resource type="FontFile" uid="uid://3fq0m0ua6jhr" path="res://asset/04B_19__.TTF" id="5_a7li1"]
+[ext_resource type="Texture2D" uid="uid://bl2i6c1vrm1vk" path="res://asset/medium_daden.jpg" id="6_t7l1b"]
+[ext_resource type="Texture2D" uid="uid://cu86b6nk5gl3f" path="res://asset/medium.png" id="7_s7glx"]
+[ext_resource type="Texture2D" uid="uid://c2rwqm02qp535" path="res://asset/hard_daden.jpg" id="8_bjflu"]
+[ext_resource type="Texture2D" uid="uid://he4pt20l2rtn" path="res://asset/hard.png" id="9_am1ua"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4wcsw"]
+font = ExtResource("5_a7li1")
+font_size = 22
+font_color = Color(0.26666668, 1, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0gea0"]
+font = ExtResource("5_a7li1")
+font_size = 22
+font_color = Color(1, 0.8666667, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bcxuc"]
+font = ExtResource("5_a7li1")
+font_size = 22
+font_color = Color(1, 0.13333334, 0.13333334, 1)
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jcnwc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -8.0
+offset_right = 1151.0
+offset_bottom = 900.0
+texture = ExtResource("2_w7ar2")
+stretch_mode = 6
+
+[node name="BtnEasy" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 0
+offset_left = 369.0
+offset_top = 134.0
+offset_right = 740.0
+offset_bottom = 265.0
+texture_normal = ExtResource("3_sxlbb")
+texture_pressed = ExtResource("4_5034v")
+texture_hover = ExtResource("4_5034v")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="BtnEasy"]
+layout_mode = 1
+offset_right = 35.0
+offset_bottom = 23.0
+text = "Easy"
+label_settings = SubResource("LabelSettings_4wcsw")
+
+[node name="ReferenceRect" type="ReferenceRect" parent="BtnEasy"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+border_color = Color(0, 0, 0, 1)
+border_width = 4.0
+editor_only = false
+
+[node name="BtnMedium" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 0
+offset_left = 370.0
+offset_top = 377.0
+offset_right = 740.0
+offset_bottom = 502.0
+texture_normal = ExtResource("6_t7l1b")
+texture_pressed = ExtResource("7_s7glx")
+texture_hover = ExtResource("7_s7glx")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="BtnMedium"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Medium"
+label_settings = SubResource("LabelSettings_0gea0")
+
+[node name="ReferenceRect" type="ReferenceRect" parent="BtnMedium"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+border_color = Color(0, 0, 0, 1)
+border_width = 4.0
+editor_only = false
+
+[node name="BtnHard" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 0
+offset_left = 369.0
+offset_top = 631.0
+offset_right = 740.0
+offset_bottom = 769.0
+texture_normal = ExtResource("8_bjflu")
+texture_pressed = ExtResource("9_am1ua")
+texture_hover = ExtResource("9_am1ua")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="BtnHard"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Hard"
+label_settings = SubResource("LabelSettings_bcxuc")
+
+[node name="ReferenceRect" type="ReferenceRect" parent="BtnHard"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+border_color = Color(0, 0, 0, 1)
+border_width = 4.0
+editor_only = false
