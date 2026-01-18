@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7egl8aaxot6k"
-valid=false
+uid="uid://d36rkki8i73nm"
+path="res://.godot/imported/ easy.png-f48a244dcb50693753be4be4a3000de0.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://asset/pipe-green.png"
+source_file="res://asset/ easy.png"
+dest_files=["res://.godot/imported/ easy.png-f48a244dcb50693753be4be4a3000de0.ctex"]
 
 [params]
 

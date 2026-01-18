@@ -3,6 +3,7 @@ using System;
 
 public partial class Pipe : Node2D
 {
+	//Khởi tạo giá trị cho mấy cái ống
 	public float Speed = 220;
 	public float Gap = 180;
 	public float MinY = -120;
@@ -15,6 +16,7 @@ public partial class Pipe : Node2D
 	private Sprite2D Ground;
 	private PipeSpawner Pipes;
 	
+	//Link ống với mấy cái khác
 	public override void _Ready()
 	{
 		Top = GetNode<Sprite2D>("Top");
@@ -26,6 +28,7 @@ public partial class Pipe : Node2D
 		Bot.ZIndex = 0;
 	}
 	
+	//Khởi tạo cái ống ra
 	public void Setup(float CenterY, float gap)
 	{
 		Gap = gap;
@@ -41,6 +44,7 @@ public partial class Pipe : Node2D
 		Bot.Position = new Vector2(0, CenterY + Gap * (float)0.5 + (BottomPipeHeight/2));
 	}
 
+	//Cho cái ống di chuyển nếu mà đi ra khỏi màn hình thì xoá cái ống
 	public override void _Process(double delta)
 	{
 		Position = new Vector2(Position.X - Speed * (float)delta, Position.Y);
@@ -52,6 +56,8 @@ public partial class Pipe : Node2D
 		QueueRedraw();
 	}	
 	
+	
+	//HitBox của cái ống
 	private Rect2 PipeHitbox(Sprite2D pipe)
 	{
 		Texture2D tex = pipe.Texture;
@@ -61,6 +67,7 @@ public partial class Pipe : Node2D
 		Vector2 pos = pipe.GlobalPosition - (size / 2);
 		return new Rect2(pos, size);
 	}
+<<<<<<< Updated upstream
 	
 	public override void _Draw()
 	{
@@ -73,4 +80,6 @@ public partial class Pipe : Node2D
 			new Rect2(ToLocal(BotPipe.Position), BotPipe.Size),new Color(1, 0, 0),false
 		);
 	}
+=======
+>>>>>>> Stashed changes
 }

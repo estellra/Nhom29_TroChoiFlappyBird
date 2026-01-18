@@ -4,15 +4,22 @@ using System.Collections.Generic;
 
 public partial class Camera : Node2D
 {
+	//Khởi tạo vị trí camera so với con chim 
 	[Export] public NodePath PlayerPath;
 	private Node2D player;
 	[Export] public float CameraSmooth = 8f;
 	private Vector2 desiredPlayerScreenPos; 
+<<<<<<< Updated upstream
 	private Vector2 currentCameraPos = Vector2.Zero;
 	
 	// List các node cần di chuyển theo camera (KHÔNG bao gồm Background)
 	private List<Node2D> nodesToMove = new List<Node2D>();
 	
+=======
+	private Vector2 currentCameraPos = Vector2.Zero; 
+	
+	//Link node Player
+>>>>>>> Stashed changes
 	public override void _Ready()
 	{
 		// Lấy player
@@ -66,6 +73,7 @@ public partial class Camera : Node2D
 		}
 	}
 	
+	//Tính vị trí camera đi theo con chim
 	public override void _Process(double delta)
 	{
 		if (player == null) return;
@@ -81,6 +89,7 @@ public partial class Camera : Node2D
 		GetViewport().CanvasTransform = Transform2D.Identity.Translated(-currentCameraPos);
 	}
 	
+	//Cho cái camera lại trước chỗ con chim spam
 	public void ResetCamera()
 	{
 		if (player != null)

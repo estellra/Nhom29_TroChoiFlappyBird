@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public partial class PipeSpawner : Node2D
 {
+	//Khởi tạo danh sách ống
 	public PackedScene PipeSpawn;
 	public Node2D Player;
 	public float SpawnGap = 180;
@@ -13,11 +14,14 @@ public partial class PipeSpawner : Node2D
 	private float timer=(float)2.5;
 	public List<Pipe> PipeList=new List<Pipe>();
 	
+	//Link với cái player với ống đã khởi tạo
 	public override void _Ready()
 	{
 		Player=GetNode<Node2D>("../Player");
 		PipeSpawn=(PackedScene)ResourceLoader.Load("res://scene/pipe.tscn");
 	}
+	
+	//Tính thời gian để cái ống nó spam ra
 	public override void _Process(double delta)
 	{
 		timer-=(float)delta;
@@ -28,6 +32,7 @@ public partial class PipeSpawner : Node2D
 		}
 	}
 
+	//Hàm spam ống
 	private void SpawnPipe()
 	{
 		Pipe pipe = PipeSpawn.Instantiate<Pipe>();
@@ -38,9 +43,25 @@ public partial class PipeSpawner : Node2D
 		PipeList.Add(pipe);
 	}
 	
+	//Xoá ống
 	public void RemovePipe(Pipe pipe)
 	{
 		PipeList.Remove(pipe);
 	}
+<<<<<<< Updated upstream
+=======
+	
+	//Clear toàn bộ danh sách ống
+	public void ClearPipe()
+	{
+		foreach (var pipe in PipeList)
+		{
+			if (IsInstanceValid(pipe))
+			pipe.QueueFree();
+		}
+		PipeList.Clear();
+		reset = false;
+	}
+>>>>>>> Stashed changes
 	
 }

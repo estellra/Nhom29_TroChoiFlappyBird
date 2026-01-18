@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7egl8aaxot6k"
-valid=false
+uid="uid://c2rwqm02qp535"
+path="res://.godot/imported/hard_daden.jpg-eee5b3bfd42a767764bc27e1dc6d3063.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://asset/pipe-green.png"
+source_file="res://asset/hard_daden.jpg"
+dest_files=["res://.godot/imported/hard_daden.jpg-eee5b3bfd42a767764bc27e1dc6d3063.ctex"]
 
 [params]
 

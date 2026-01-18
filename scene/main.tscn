@@ -7,6 +7,58 @@
 [ext_resource type="Texture2D" uid="uid://bht6e1mr7xumk" path="res://asset/ground.png" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://dq8p1s4ihufce" path="res://scene/pipe_spawner.tscn" id="5_4j5ol"]
 [ext_resource type="PackedScene" uid="uid://ckuu87371tyox" path="res://scene/camera.tscn" id="6_4j5ol"]
+<<<<<<< Updated upstream
+=======
+[ext_resource type="Texture2D" uid="uid://c45bx0frgrnng" path="res://asset/yellowbird-downflap.png" id="7_0vlqb"]
+[ext_resource type="Script" uid="uid://du7t4j5mk0wlb" path="res://scene/BackgroundManager.cs" id="7_p1hux"]
+[ext_resource type="Texture2D" uid="uid://duw4ksmsaitjn" path="res://asset/yellowbird-midflap.png" id="8_gjnwh"]
+[ext_resource type="Texture2D" uid="uid://g5l2tbhaycsh" path="res://asset/yellowbird-upflap.png" id="9_fdqew"]
+[ext_resource type="Texture2D" uid="uid://ctnilng4ybpo5" path="res://asset/PigAngryBird.png" id="10_0d4pv"]
+[ext_resource type="PackedScene" uid="uid://uny5snka3w35" path="res://scene/ingame_ui.tscn" id="10_tqoya"]
+[ext_resource type="Texture2D" uid="uid://bjlsl3ycdr308" path="res://asset/SkinGoose.png" id="11_gtqqq"]
+[ext_resource type="PackedScene" uid="uid://bu7qgapuptuvv" path="res://scene/LeaderboardUI.tscn" id="18_gn2wi"]
+[ext_resource type="PackedScene" uid="uid://c2rrsjggbpy14" path="res://scene/GamePausedUI.tscn" id="19_p8adh"]
+[ext_resource type="PackedScene" uid="uid://yxkdxb8jyh40" path="res://scene/cat.tscn" id="20_fdqew"]
+[ext_resource type="PackedScene" uid="uid://crkt7xykjppdp" path="res://scene/ProfileUI.tscn" id="20_oldxj"]
+[ext_resource type="PackedScene" uid="uid://bmjolvthq3sh1" path="res://scene/cat_spawner.tscn" id="21_0d4pv"]
+[ext_resource type="PackedScene" uid="uid://bvdrjlfvmag5" path="res://scene/Sfx.tscn" id="21_4jm02"]
+[ext_resource type="PackedScene" uid="uid://ebkju5pan8o" path="res://scene/UserData.tscn" id="22_vneqc"]
+[ext_resource type="PackedScene" uid="uid://bbiyg4kpgymlb" path="res://scene/Leaderboard.tscn" id="23_io27d"]
+[ext_resource type="PackedScene" uid="uid://ci7gutr4aqbye" path="res://scene/GameOverUI.tscn" id="24_fa8t4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gn2wi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_0vlqb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_gjnwh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fdqew")
+}],
+"loop": true,
+"name": &"skin_0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_0d4pv")
+}],
+"loop": true,
+"name": &"skin_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_gtqqq")
+}],
+"loop": true,
+"name": &"skin_2",
+"speed": 5.0
+}]
+>>>>>>> Stashed changes
 
 [node name="main" type="Node2D"]
 
@@ -32,4 +84,39 @@ texture = ExtResource("4_lquwl")
 position = Vector2(201, 328)
 
 [node name="Camera" parent="." instance=ExtResource("6_4j5ol")]
+<<<<<<< Updated upstream
 PlayerPath = NodePath("../Player")
+=======
+
+[node name="BackgroundManager" type="Node2D" parent="."]
+script = ExtResource("7_p1hux")
+BgTexture = ExtResource("3_1bvp3")
+CameraPath = NodePath("../Camera")
+
+[node name="ig_ui" parent="." instance=ExtResource("10_tqoya")]
+
+[node name="Cat" parent="." instance=ExtResource("20_fdqew")]
+position = Vector2(-1340, -654)
+
+[node name="CatSpawner" parent="." instance=ExtResource("21_0d4pv")]
+
+[node name="Sfx" parent="." instance=ExtResource("21_4jm02")]
+
+[node name="UserData" parent="." instance=ExtResource("22_vneqc")]
+
+[node name="GamePausedUI" parent="." instance=ExtResource("19_p8adh")]
+
+[node name="Leaderboard" parent="." instance=ExtResource("23_io27d")]
+
+[node name="GameOverUI" parent="." instance=ExtResource("24_fa8t4")]
+visible = false
+
+[node name="ProfileUI" parent="." instance=ExtResource("20_oldxj")]
+visible = false
+
+[node name="LeaderboardUI" parent="." instance=ExtResource("18_gn2wi")]
+visible = false
+
+[editable path="Player"]
+[editable path="ig_ui"]
+>>>>>>> Stashed changes
