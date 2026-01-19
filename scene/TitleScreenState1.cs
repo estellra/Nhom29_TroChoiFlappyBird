@@ -22,6 +22,7 @@ public partial class TitleScreenState1 : RichTextLabel
 
 	public override void _Input(InputEvent @event)
 	{
+		if (TitleScreenMenu != null && TitleScreenMenu.Visible) return;
 		if (@event is InputEventKey keyEvent && keyEvent.IsPressed())
 		{			
 			ShowMenu();

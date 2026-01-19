@@ -12,6 +12,7 @@ public partial class TitleScreen : CanvasLayer
 	private float time = 1.5F;
 	private List<RichTextLabel> menus;
 	private int index;
+	private int hoverindex = -1;
 	private string HIGHLIGHT_START_TAG = "[color=yellow]";
 	private string HIGHLIGHT_END_TAG = "[/color]";
 	private string DEFAULT_COLOR_TAG = "[color=white]";
@@ -20,7 +21,6 @@ public partial class TitleScreen : CanvasLayer
 	public override void _Ready()
 	{
 		SkinIdx = GlobalData.SkinDangChon;
-
 		player = GetNode<Node2D>("Player");
 		title = GetNode<Control>("Title");
 		playerY = player.Position.Y;
@@ -38,14 +38,30 @@ public partial class TitleScreen : CanvasLayer
 			{
 				int temp=j;
 				label.SetMeta("original_text", label.Text);
-				label.MouseEntered += () => hover(temp);
-				label.GuiInput += (InputEvent e) =>
+				label.MouseEntered += () =>
+			{
+				hoverindex=temp;
+				if (index != -1 && index < menus.Count)
+					removehighlight(menus[index]);
+				  	index = temp;
+					updatehighlight();
+			};
+			label.MouseExited += () =>
+			{
+				hoverindex=-1;
+				removehighlight(label);
+				index = -1;
+			};
+			label.GuiInput += (InputEvent e) =>
+			{
+				if (e is InputEventMouseButton mb
+					&& mb.Pressed
+					&& mb.ButtonIndex == MouseButton.Left
+					&& hoverindex == temp) 
 				{
-					if (e is InputEventMouseButton mb && mb.Pressed && mb.ButtonIndex == MouseButton.Left)
-						{
-							enter(index);
-						}
-				};
+					enter(temp);
+				}
+			};
 				menus.Add(label);
 				j++;
 			}
@@ -70,6 +86,7 @@ public partial class TitleScreen : CanvasLayer
 		}
 		if (Input.IsActionJustPressed("ui_enter"))
 		{
+			if(hoverindex==-1)return;
 			enter(index);
 			GetViewport().SetInputAsHandled();
 		}
@@ -154,6 +171,7 @@ public partial class TitleScreen : CanvasLayer
 				tree.ChangeSceneToFile("res://scene/level_select.tscn");
 				break;
 			case 1:
+				GetTree().ChangeSceneToFile("res://scene/ranking.tscn");
 				break;
 			case 2:
 				break;
