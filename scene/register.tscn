@@ -1,0 +1,181 @@
+[gd_scene load_steps=9 format=3 uid="uid://cxnh87qfk1kks"]
+
+[ext_resource type="Script" uid="uid://bdlh5lo7x7jdh" path="res://scene/register.cs" id="1_07f7y"]
+[ext_resource type="Texture2D" uid="uid://drxoeprwsaoce" path="res://asset/bg.png" id="2_umdsq"]
+[ext_resource type="Texture2D" uid="uid://3co53sdi8kkx" path="res://asset/border.png" id="3_07f7y"]
+[ext_resource type="Texture2D" uid="uid://0aqiggkveyt3" path="res://asset/bird.png" id="3_oiwjh"]
+[ext_resource type="FontFile" uid="uid://3fq0m0ua6jhr" path="res://asset/04B_19__.TTF" id="4_oiwjh"]
+[ext_resource type="Texture2D" uid="uid://ch5ea4mefs2un" path="res://asset/backbtn.png" id="6_egrjo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lrwui"]
+font = ExtResource("4_oiwjh")
+font_size = 22
+
+[sub_resource type="LabelSettings" id="LabelSettings_a3xii"]
+font = ExtResource("4_oiwjh")
+font_size = 22
+
+[node name="register" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_07f7y")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_umdsq")
+
+[node name="Bird" type="Sprite2D" parent="."]
+position = Vector2(571.5, 171.25002)
+scale = Vector2(0.1866554, 0.1946791)
+texture = ExtResource("3_oiwjh")
+
+[node name="UserName" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3298611
+anchor_top = 0.28777778
+anchor_right = 0.6831597
+anchor_bottom = 0.37444445
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_oiwjh")
+theme_override_font_sizes/font_size = 22
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Pass" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.328125
+anchor_top = 0.4211111
+anchor_right = 0.6814236
+anchor_bottom = 0.50777775
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_oiwjh")
+theme_override_font_sizes/font_size = 22
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Confirm Pass" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3263889
+anchor_top = 0.5588889
+anchor_right = 0.6796875
+anchor_bottom = 0.64555556
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_oiwjh")
+theme_override_font_sizes/font_size = 22
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Email" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3263889
+anchor_top = 0.70111114
+anchor_right = 0.6796875
+anchor_bottom = 0.7877778
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_oiwjh")
+theme_override_font_sizes/font_size = 22
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.17881945
+anchor_top = 0.3011111
+anchor_right = 0.32899305
+anchor_bottom = 0.3588889
+text = "Username :"
+label_settings = SubResource("LabelSettings_lrwui")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.14583333
+anchor_top = 0.71555555
+anchor_right = 0.29600695
+anchor_bottom = 0.7733333
+text = "Email address :"
+label_settings = SubResource("LabelSettings_lrwui")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.10763889
+anchor_top = 0.57666665
+anchor_right = 0.2986111
+anchor_bottom = 0.6344444
+text = "Confirm Password :"
+label_settings = SubResource("LabelSettings_lrwui")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.17447917
+anchor_top = 0.43222222
+anchor_right = 0.3246528
+anchor_bottom = 0.49
+text = "Password :"
+label_settings = SubResource("LabelSettings_lrwui")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="btnRegister" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3732639
+anchor_top = 0.83555555
+anchor_right = 0.6024306
+anchor_bottom = 0.93777776
+texture_normal = ExtResource("3_07f7y")
+ignore_texture_size = true
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="btnRegister"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "REGISTER"
+label_settings = SubResource("LabelSettings_a3xii")
+
+[node name="btnBack" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.088541664
+anchor_bottom = 0.101111114
+texture_normal = ExtResource("6_egrjo")
+ignore_texture_size = true
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true

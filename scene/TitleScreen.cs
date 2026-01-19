@@ -20,6 +20,11 @@ public partial class TitleScreen : CanvasLayer
 	private int TotalSkin = 3;
 	public override void _Ready()
 	{
+		var btnback = GetNode<TextureButton>("btnBack");
+		btnback.Pressed += () =>
+		{
+			GetTree().ChangeSceneToFile("res://scene/ranking.tscn"); 
+		};
 		SkinIdx = GlobalData.SkinDangChon;
 		player = GetNode<Node2D>("Player");
 		title = GetNode<Control>("Title");

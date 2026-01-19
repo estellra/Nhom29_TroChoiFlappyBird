@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bt60g6crbmhn8"]
+[gd_scene load_steps=19 format=3 uid="uid://bt60g6crbmhn8"]
 
 [ext_resource type="Texture2D" uid="uid://drxoeprwsaoce" path="res://asset/bg.png" id="1_i58fu"]
 [ext_resource type="Script" uid="uid://8ed6lh0icail" path="res://scene/TitleScreen.cs" id="1_t18hh"]
@@ -16,6 +16,7 @@
 [ext_resource type="FontFile" uid="uid://bxy3cry7618ld" path="res://asset/PrStart.ttf" id="10_rbyiy"]
 [ext_resource type="Script" uid="uid://d3sxnqq4tslcy" path="res://scene/TitleScreenState1.cs" id="12_t65bv"]
 [ext_resource type="Texture2D" uid="uid://c87pf5ye413de" path="res://asset/Arrow.png" id="13_tn2ht"]
+[ext_resource type="Texture2D" uid="uid://ch5ea4mefs2un" path="res://asset/backbtn.png" id="17_o67lm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rbyiy"]
 animations = [{
@@ -219,3 +220,10 @@ rotation = 1.5707964
 texture_normal = ExtResource("13_tn2ht")
 ignore_texture_size = true
 stretch_mode = 4
+
+[node name="btnBack" type="TextureButton" parent="."]
+offset_right = 128.0
+offset_bottom = 109.0
+texture_normal = ExtResource("17_o67lm")
+ignore_texture_size = true
+stretch_mode = 6
