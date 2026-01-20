@@ -1,46 +1,201 @@
 using Godot;
 using System;
-using System.Data.SqlClient;
+using System.Collections.Generic;
+using Microsoft.Data.SqlClient;
 
-public partial class DatabaseManager : Node
+public static class DatabaseManager
 {
-	private string connectionString;
-	public override void _Ready()
-	{
-		string osName = OS.GetName();
-		if (osName == "macOS" || osName == "Linux")
-		{
-			connectionString = "Server=127.0.0.1,1433;Database=GameLeaderboard;User Id=sa;Password=Password.1;TrustServerCertificate=True;";
-			GD.Print("Đang chạy trên MAC -> Dùng cấu hình Docker.");
-		}
-		else 
-		{
-			connectionString = "Server=.\\SQLEXPRESS;Database=GameLeaderboard;Integrated Security=True;TrustServerCertificate=True;";
-			GD.Print("Đang chạy trên WINDOWS -> Dùng cấu hình SQL Express.");
-		}
-	}
+	// GIỮ NGUYÊN CHUỖI KẾT NỐI CỦA ÔNG
+	private static string connectionString = @"Server=.\CSDL;Database=FlappyBirdDB;Integrated Security=True;TrustServerCertificate=True;";
 
-	public void SaveScore(string playerName, int score)
+	// 1. ĐĂNG KÝ (Sửa lại: Chỉ tạo Account, không tạo Score rác)
+	public static int Register(string username, string password, string email)
 	{
-		if (string.IsNullOrEmpty(connectionString)) return;
 		try
 		{
 			using (SqlConnection conn = new SqlConnection(connectionString))
 			{
 				conn.Open();
-				string query = "INSERT INTO PlayerScores (PlayerName, Score) VALUES (@name, @score)";
+
+				// Check trùng tên
+				string checkUser = "SELECT COUNT(*) FROM Accounts WHERE Username = @u";
+				using (SqlCommand cmd = new SqlCommand(checkUser, conn)) {
+					cmd.Parameters.AddWithValue("@u", username);
+					if ((int)cmd.ExecuteScalar() > 0) return 1;
+				}
+
+				// Check trùng email
+				string checkEmail = "SELECT COUNT(*) FROM Accounts WHERE Email = @e";
+				using (SqlCommand cmd = new SqlCommand(checkEmail, conn)) {
+					cmd.Parameters.AddWithValue("@e", email);
+					if ((int)cmd.ExecuteScalar() > 0) return 2;
+				}
+
+				// Lưu Account
+				string query = "INSERT INTO Accounts (Username, Password, Email) VALUES (@u, @p, @e)";
 				using (SqlCommand cmd = new SqlCommand(query, conn))
 				{
-					cmd.Parameters.AddWithValue("@name", playerName);
-					cmd.Parameters.AddWithValue("@score", score);
+					cmd.Parameters.AddWithValue("@u", username);
+					cmd.Parameters.AddWithValue("@p", password);
+					cmd.Parameters.AddWithValue("@e", email);
 					cmd.ExecuteNonQuery();
 				}
 			}
-			GD.Print($"[SQL] Đã lưu điểm: {score} cho {playerName}");
+			return 0; // Thành công
 		}
-		catch (Exception ex)
-		{
-			GD.PrintErr("[SQL Lỗi] " + ex.Message);
-		}
+		catch (Exception e) { GD.PrintErr(e.Message); return -1; }
 	}
+
+	// 2. ĐĂNG NHẬP (Sửa lại: Tìm điểm cao nhất trong lịch sử để load vào game)
+	public static bool Login(string username, string password, out int bestScore)
+	{
+		bestScore = 0;
+		try
+		{
+			using (SqlConnection conn = new SqlConnection(connectionString))
+			{
+				conn.Open();
+				// Lấy ID và tìm điểm cao nhất (MAX) trong bảng Scores
+				string query = @"
+                    SELECT a.AccountID, 
+                           (SELECT MAX(Score) FROM Scores WHERE AccountID = a.AccountID) as MaxScore
+                    FROM Accounts a
+					WHERE a.Username = @u AND a.Password = @p";
+
+				using (SqlCommand cmd = new SqlCommand(query, conn))
+				{
+					cmd.Parameters.AddWithValue("@u", username);
+					cmd.Parameters.AddWithValue("@p", password);
+					
+					using (SqlDataReader reader = cmd.ExecuteReader())
+					{
+						if (reader.Read()) // Nếu tìm thấy user
+						{
+							// Nếu MaxScore là null (chưa chơi ván nào) thì trả về 0
+							if (reader["MaxScore"] != DBNull.Value)
+							{
+								bestScore = Convert.ToInt32(reader["MaxScore"]);
+							}
+							return true;
+						}
+					}
+				}
+			}
+		}
+		catch (Exception e) { GD.PrintErr("Lỗi Login: " + e.Message); }
+		return false;
+	}
+
+	public static void SaveScore(string username, int score)
+	{
+		try
+		{
+			using (SqlConnection conn = new SqlConnection(connectionString))
+			{
+				conn.Open();
+				// Tìm ID của user rồi Insert điểm mới vào
+				string query = @"
+                    INSERT INTO Scores (AccountID, Score)
+					SELECT AccountID, @s FROM Accounts WHERE Username = @u";
+
+				using (SqlCommand cmd = new SqlCommand(query, conn))
+				{
+					cmd.Parameters.AddWithValue("@s", score);
+					cmd.Parameters.AddWithValue("@u", username);
+					cmd.ExecuteNonQuery();
+				}
+			}
+		}
+		catch (Exception e) { GD.PrintErr("Lỗi SaveScore: " + e.Message); }
+	}
+
+	// 4. LẤY BẢNG XẾP HẠNG (Sửa lại: Gom nhóm theo User, lấy điểm cao nhất của họ)
+	public static List<LeaderboardItem> GetLeaderboard()
+	{
+		var list = new List<LeaderboardItem>();
+		try
+		{
+			using (SqlConnection conn = new SqlConnection(connectionString))
+			{
+				conn.Open();
+				// Câu lệnh thần thánh: Gom mỗi người 1 dòng với điểm cao nhất của họ
+				string query = @"
+                    SELECT TOP 10 a.Username, MAX(s.Score) as BestScore
+                    FROM Scores s
+                    JOIN Accounts a ON s.AccountID = a.AccountID
+                    GROUP BY a.Username
+					ORDER BY BestScore DESC";
+
+				using (SqlCommand cmd = new SqlCommand(query, conn))
+				{
+					using (SqlDataReader reader = cmd.ExecuteReader())
+					{
+						while (reader.Read())
+						{
+							list.Add(new LeaderboardItem
+							{
+								Name = reader["Username"].ToString(),
+								Score = Convert.ToInt32(reader["BestScore"])
+							});
+						}
+					}
+				}
+			}
+		}
+		catch (Exception e) { GD.PrintErr("Lỗi BXH: " + e.Message); }
+		return list;
+	}
+	// ... (Giữ nguyên các hàm SaveOTP, VerifyOTP, ResetPassword của ông ở đây) ...
+	public static void SaveOTP(string email, string otp)
+	{
+		 // Code cũ giữ nguyên
+		 try {
+			using (SqlConnection conn = new SqlConnection(connectionString)) {
+				conn.Open();
+				string query = "UPDATE Accounts SET OTP_Code = @otp WHERE Email = @email";
+				using (SqlCommand cmd = new SqlCommand(query, conn)) {
+					cmd.Parameters.AddWithValue("@otp", otp);
+					cmd.Parameters.AddWithValue("@email", email);
+					cmd.ExecuteNonQuery();
+				}
+			}
+		} catch (Exception e) { GD.PrintErr(e.Message); }
+	}
+	public static bool VerifyOTP(string email, string otpInput)
+	{
+		// Code cũ giữ nguyên
+		 try {
+			using (SqlConnection conn = new SqlConnection(connectionString)) {
+				conn.Open();
+				string query = "SELECT COUNT(*) FROM Accounts WHERE Email = @email AND OTP_Code = @otp";
+				using (SqlCommand cmd = new SqlCommand(query, conn)) {
+					cmd.Parameters.AddWithValue("@email", email);
+					cmd.Parameters.AddWithValue("@otp", otpInput);
+					int count = (int)cmd.ExecuteScalar();
+					return count > 0; 
+				}
+			}
+		} catch { return false; }
+	}
+	public static void ResetPassword(string email, string newPass)
+	{
+		// Code cũ giữ nguyên
+		  try {
+			using (SqlConnection conn = new SqlConnection(connectionString)) {
+				conn.Open();
+				string query = "UPDATE Accounts SET Password = @p, OTP_Code = NULL WHERE Email = @e";
+				using (SqlCommand cmd = new SqlCommand(query, conn)) {
+					cmd.Parameters.AddWithValue("@p", newPass);
+					cmd.Parameters.AddWithValue("@e", email);
+					cmd.ExecuteNonQuery();
+				}
+			}
+		} catch (Exception e) { GD.PrintErr(e.Message); }
+	}
+}
+
+public class LeaderboardItem
+{
+	public string Name { get; set; }
+	public int Score { get; set; }
 }

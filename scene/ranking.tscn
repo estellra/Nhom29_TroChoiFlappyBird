@@ -126,3 +126,6 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "REGISTER"
 label_settings = SubResource("LabelSettings_qhjic")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 455)

@@ -1,0 +1,145 @@
+[gd_scene load_steps=10 format=3 uid="uid://c726sdi3qvhbm"]
+
+[ext_resource type="Script" uid="uid://cbjy62ci4d3g5" path="res://scene/Newpass.cs" id="1_43u5c"]
+[ext_resource type="Texture2D" uid="uid://drxoeprwsaoce" path="res://asset/bg.png" id="2_8m2mp"]
+[ext_resource type="Texture2D" uid="uid://ch5ea4mefs2un" path="res://asset/backbtn.png" id="3_yji3b"]
+[ext_resource type="FontFile" uid="uid://3fq0m0ua6jhr" path="res://asset/04B_19__.TTF" id="4_h27rv"]
+[ext_resource type="Texture2D" uid="uid://3co53sdi8kkx" path="res://asset/border.png" id="5_jsd1g"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sijim"]
+font = ExtResource("4_h27rv")
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_4ahpl"]
+font = ExtResource("4_h27rv")
+font_size = 22
+
+[sub_resource type="LabelSettings" id="LabelSettings_ocumf"]
+font = ExtResource("4_h27rv")
+font_size = 22
+
+[sub_resource type="LabelSettings" id="LabelSettings_v4uxb"]
+font = ExtResource("4_h27rv")
+font_size = 22
+
+[node name="Newpass" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_43u5c")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_8m2mp")
+
+[node name="btnBack" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.088541664
+anchor_bottom = 0.101111114
+texture_normal = ExtResource("3_yji3b")
+ignore_texture_size = true
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3420139
+anchor_top = 0.25444445
+anchor_right = 0.6649306
+anchor_bottom = 0.30555555
+text = "Reset password :"
+label_settings = SubResource("LabelSettings_sijim")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Pass" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.328125
+anchor_top = 0.4211111
+anchor_right = 0.6814236
+anchor_bottom = 0.50777775
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_h27rv")
+theme_override_font_sizes/font_size = 22
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ConfirmPass" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3263889
+anchor_top = 0.5588889
+anchor_right = 0.6796875
+anchor_bottom = 0.64555556
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_h27rv")
+theme_override_font_sizes/font_size = 22
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.10763889
+anchor_top = 0.57666665
+anchor_right = 0.2986111
+anchor_bottom = 0.6344444
+text = "Confirm Password :"
+label_settings = SubResource("LabelSettings_4ahpl")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.17447917
+anchor_top = 0.43222222
+anchor_right = 0.3246528
+anchor_bottom = 0.49
+text = "Password :"
+label_settings = SubResource("LabelSettings_ocumf")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="btnOK" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4001736
+anchor_top = 0.7688889
+anchor_right = 0.6293403
+anchor_bottom = 0.8711111
+texture_normal = ExtResource("5_jsd1g")
+ignore_texture_size = true
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="btnOK"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+text = "OK"
+label_settings = SubResource("LabelSettings_v4uxb")

@@ -6,8 +6,13 @@ public partial class TitleScreen : CanvasLayer
 {
 	private Node2D player;
 	private Control title;
+	private TextureButton leftbtn;
+	private TextureButton rightbtn;
 	private float playerY;
 	private float titleY;
+	private float lbusery;
+	private float leftbtny;
+	private float rightbtny;
 	private float dy = 40;
 	private float time = 1.5F;
 	private List<RichTextLabel> menus;
@@ -20,6 +25,26 @@ public partial class TitleScreen : CanvasLayer
 	private int TotalSkin = 3;
 	public override void _Ready()
 	{
+		var lblUser = GetNode<Label>("LblUserName"); 
+		leftbtn=GetNode<TextureButton>("btnLeft");
+		rightbtn=GetNode<TextureButton>("btnRight");
+		if (GlobalData.CurrentUser != "")
+		{
+			lblUser.Text = "Player: " + GlobalData.CurrentUser;
+		}
+		else
+		{
+			lblUser.Text = "Player: Guest"; 
+		}
+		
+		var btnLogout = GetNode<TextureButton>("btnLogout"); 
+		btnLogout.Pressed += () =>
+		{
+			GlobalData.CurrentUser = "";
+			GlobalData.CurrentBestScore = 0;
+			GetTree().ChangeSceneToFile("res://scene/ranking.tscn"); 
+		};
+		
 		var btnback = GetNode<TextureButton>("btnBack");
 		btnback.Pressed += () =>
 		{
@@ -30,9 +55,14 @@ public partial class TitleScreen : CanvasLayer
 		title = GetNode<Control>("Title");
 		playerY = player.Position.Y;
 		titleY = title.Position.Y;
+		lbusery=lblUser.Position.Y;
+		leftbtny=leftbtn.Position.Y;
+		rightbtny=rightbtn.Position.Y;
 		movement(player, playerY, dy, time);
 		movement(title, titleY, dy, time);
-		
+		movement(lblUser, lbusery, dy, time);
+		movement(leftbtn, leftbtny, dy, time);
+		movement(rightbtn,rightbtny, dy, time);
 		menus = new List<RichTextLabel>();
 		index = -1;
 		VBoxContainer item = GetNode<VBoxContainer>("TItleScreenMenu");
@@ -176,7 +206,7 @@ public partial class TitleScreen : CanvasLayer
 				tree.ChangeSceneToFile("res://scene/level_select.tscn");
 				break;
 			case 1:
-				GetTree().ChangeSceneToFile("res://scene/ranking.tscn");
+				GetTree().ChangeSceneToFile("res://scene/LeaderboardUI.tscn");
 				break;
 			case 2:
 				break;

@@ -1,0 +1,170 @@
+[gd_scene load_steps=8 format=3 uid="uid://b2d1y44kewb6d"]
+
+[ext_resource type="Script" uid="uid://qs3q6ih3f7y4" path="res://scene/Otpmail.cs" id="1_078rj"]
+[ext_resource type="Texture2D" uid="uid://drxoeprwsaoce" path="res://asset/bg.png" id="2_lwtl2"]
+[ext_resource type="Texture2D" uid="uid://3co53sdi8kkx" path="res://asset/border.png" id="3_a5saf"]
+[ext_resource type="FontFile" uid="uid://3fq0m0ua6jhr" path="res://asset/04B_19__.TTF" id="4_wxsrj"]
+[ext_resource type="Texture2D" uid="uid://ch5ea4mefs2un" path="res://asset/backbtn.png" id="5_pbl7q"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cax0x"]
+font = ExtResource("4_wxsrj")
+font_size = 22
+
+[sub_resource type="LabelSettings" id="LabelSettings_0km7n"]
+font = ExtResource("4_wxsrj")
+font_size = 40
+
+[node name="Otpmail" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_078rj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_lwtl2")
+
+[node name="btnResendOTP" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3967014
+anchor_top = 0.5366667
+anchor_right = 0.6258681
+anchor_bottom = 0.6388889
+texture_normal = ExtResource("3_a5saf")
+ignore_texture_size = true
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="btnResendOTP"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+text = "Resend OTP"
+label_settings = SubResource("LabelSettings_cax0x")
+
+[node name="btnSendOTP" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.39756945
+anchor_top = 0.5366667
+anchor_right = 0.6267361
+anchor_bottom = 0.6388889
+texture_normal = ExtResource("3_a5saf")
+ignore_texture_size = true
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="btnSendOTP"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+text = "Send OTp"
+label_settings = SubResource("LabelSettings_cax0x")
+
+[node name="btnOK" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4001736
+anchor_top = 0.7688889
+anchor_right = 0.6293403
+anchor_bottom = 0.8711111
+texture_normal = ExtResource("3_a5saf")
+ignore_texture_size = true
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="btnOK"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+text = "OK"
+label_settings = SubResource("LabelSettings_cax0x")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0.3420139
+anchor_top = 0.25444445
+anchor_right = 0.6649306
+anchor_bottom = 0.30555555
+text = "Enter your Email :"
+label_settings = SubResource("LabelSettings_0km7n")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="UserName" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2265625
+anchor_top = 0.35555556
+anchor_right = 0.7795139
+anchor_bottom = 0.4422222
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_wxsrj")
+theme_override_font_sizes/font_size = 22
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="btnBack" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.088541664
+anchor_bottom = 0.101111114
+texture_normal = ExtResource("5_pbl7q")
+ignore_texture_size = true
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="CooldownTimer" type="Timer" parent="."]
+
+[node name="OTP" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3324653
+anchor_top = 0.6566667
+anchor_right = 0.6857639
+anchor_bottom = 0.74333334
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_wxsrj")
+theme_override_font_sizes/font_size = 22
+alignment = 1
+metadata/_edit_use_anchors_ = true

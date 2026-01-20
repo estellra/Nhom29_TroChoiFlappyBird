@@ -151,3 +151,6 @@ texture_normal = ExtResource("10_sxlbb")
 ignore_texture_size = true
 stretch_mode = 6
 metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(573, 456)

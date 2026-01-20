@@ -16,6 +16,7 @@ public partial class Pipe : Node2D
 	private PipeSpawner Pipes;
 	public bool pointed=false;
 	
+	
 	public override void _Ready()
 	{
 		Top = GetNode<Sprite2D>("Top");
@@ -25,6 +26,8 @@ public partial class Pipe : Node2D
 		Pipes=GetNode<PipeSpawner>("../PipeSpawner");
 		Top.ZIndex = 0;
 		Bot.ZIndex = 0;
+		if(Pipes.medium==false&&Pipes.hard==true) Speed=320;
+
 	}
 	
 	public void Setup(float CenterY, float gap)
@@ -48,6 +51,7 @@ public partial class Pipe : Node2D
 		{
 			return;	
 		}
+		Speed+=GlobalData.buffspeed;
 		Position = new Vector2(Position.X - Speed * (float)delta, Position.Y);
 		if (GlobalPosition.X < player.GlobalPosition.X-1300) 
 		{
@@ -65,18 +69,5 @@ public partial class Pipe : Node2D
 		Vector2 size=texsize*pipe.Scale;	
 		Vector2 pos = pipe.GlobalPosition - (size / 2);
 		return new Rect2(pos, size);
-	}
-	
-	
-	public override void _Draw()
-	{
-		DrawRect
-		(
-			new Rect2(ToLocal(TopPipe.Position), TopPipe.Size),new Color(1, 0, 0),false
-		);
-		DrawRect
-		(
-			new Rect2(ToLocal(BotPipe.Position), BotPipe.Size),new Color(1, 0, 0),false
-		);
 	}
 }

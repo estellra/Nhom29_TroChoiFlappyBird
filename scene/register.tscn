@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cxnh87qfk1kks"]
+[gd_scene load_steps=10 format=3 uid="uid://cxnh87qfk1kks"]
 
 [ext_resource type="Script" uid="uid://bdlh5lo7x7jdh" path="res://scene/register.cs" id="1_07f7y"]
 [ext_resource type="Texture2D" uid="uid://drxoeprwsaoce" path="res://asset/bg.png" id="2_umdsq"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://0aqiggkveyt3" path="res://asset/bird.png" id="3_oiwjh"]
 [ext_resource type="FontFile" uid="uid://3fq0m0ua6jhr" path="res://asset/04B_19__.TTF" id="4_oiwjh"]
 [ext_resource type="Texture2D" uid="uid://ch5ea4mefs2un" path="res://asset/backbtn.png" id="6_egrjo"]
+[ext_resource type="Texture2D" uid="uid://dyp02ihd3h242" path="res://asset/showpass.png" id="7_oiwjh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lrwui"]
 font = ExtResource("4_oiwjh")
@@ -64,7 +65,7 @@ theme_override_font_sizes/font_size = 22
 alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Confirm Pass" type="LineEdit" parent="."]
+[node name="ConfirmPass" type="LineEdit" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.3263889
@@ -167,6 +168,7 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 0
 text = "REGISTER"
 label_settings = SubResource("LabelSettings_a3xii")
 
@@ -176,6 +178,30 @@ anchors_preset = -1
 anchor_right = 0.088541664
 anchor_bottom = 0.101111114
 texture_normal = ExtResource("6_egrjo")
+ignore_texture_size = true
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="btnShowPass" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6831597
+anchor_top = 0.42777777
+anchor_right = 0.7621528
+anchor_bottom = 0.5011111
+texture_normal = ExtResource("7_oiwjh")
+ignore_texture_size = true
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="btnShowPassConfirm" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6814236
+anchor_top = 0.5655556
+anchor_right = 0.7604167
+anchor_bottom = 0.6388889
+texture_normal = ExtResource("7_oiwjh")
 ignore_texture_size = true
 stretch_mode = 6
 metadata/_edit_use_anchors_ = true

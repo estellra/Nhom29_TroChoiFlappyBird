@@ -11,6 +11,7 @@ public partial class Main : Node2D
 	private PipeSpawner pipes;
 	private CanvasLayer gameOverUI;
 	private TextureRect pausebtn;
+	private UserData userData;
 	
 		/*public override void _Input(InputEvent input)
 	{
@@ -32,6 +33,7 @@ public partial class Main : Node2D
 		 pipes = GetNode<PipeSpawner>("PipeSpawner");
 		gameOverUI = GetNode<CanvasLayer>("GameOverUI");
 		pausebtn = GetNode<TextureRect>("GamePausedUI/PauseBtn");
+		userData = GetNode<UserData>("UserData");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -74,6 +76,16 @@ public partial class Main : Node2D
 		gameover=true;
 		pause=false;
 		menu=false;
+		
+		if (userData != null)
+		{
+			GD.Print("Đang gọi UserData để lưu...");
+			userData.CheckAndSave(player.point);
+		}
+		else
+		{
+			GD.Print("LỖI: Không tìm thấy Node UserData!");
+		}
 		gameOverUI.Show();
 		pausebtn.Hide();
 		GetNode<TextureRect>("GameOverUI/ScorePanel").Show();

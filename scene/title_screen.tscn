@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bt60g6crbmhn8"]
+[gd_scene load_steps=22 format=3 uid="uid://bt60g6crbmhn8"]
 
 [ext_resource type="Texture2D" uid="uid://drxoeprwsaoce" path="res://asset/bg.png" id="1_i58fu"]
 [ext_resource type="Script" uid="uid://8ed6lh0icail" path="res://scene/TitleScreen.cs" id="1_t18hh"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://d3sxnqq4tslcy" path="res://scene/TitleScreenState1.cs" id="12_t65bv"]
 [ext_resource type="Texture2D" uid="uid://c87pf5ye413de" path="res://asset/Arrow.png" id="13_tn2ht"]
 [ext_resource type="Texture2D" uid="uid://ch5ea4mefs2un" path="res://asset/backbtn.png" id="17_o67lm"]
+[ext_resource type="Texture2D" uid="uid://3co53sdi8kkx" path="res://asset/border.png" id="18_1tx3d"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rbyiy"]
 animations = [{
@@ -51,6 +52,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_trhgc"]
+font = ExtResource("10_nohhj")
+font_size = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_wpyj1"]
+font = ExtResource("10_nohhj")
+font_size = 18
+
 [node name="TitleScreen" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_t18hh")
@@ -81,7 +90,7 @@ script = ExtResource("3_2fir4")
 
 [node name="Player" type="AnimatedSprite2D" parent="."]
 process_mode = 3
-position = Vector2(564, 398.5)
+position = Vector2(570, 398.5)
 scale = Vector2(1.872341, 2.3939393)
 sprite_frames = SubResource("SpriteFrames_rbyiy")
 animation = &"skin_2"
@@ -202,10 +211,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="btnLeft" type="TextureButton" parent="."]
-offset_left = 368.0
-offset_top = 456.0
-offset_right = 513.0
-offset_bottom = 587.0
+offset_left = 380.0
+offset_top = 458.0
+offset_right = 525.0
+offset_bottom = 589.0
 rotation = -1.5707964
 texture_normal = ExtResource("13_tn2ht")
 ignore_texture_size = true
@@ -227,3 +236,37 @@ offset_bottom = 109.0
 texture_normal = ExtResource("17_o67lm")
 ignore_texture_size = true
 stretch_mode = 6
+
+[node name="btnLogout" type="TextureButton" parent="."]
+offset_left = 2.0
+offset_top = 91.0
+offset_right = 137.0
+offset_bottom = 124.0
+texture_normal = ExtResource("18_1tx3d")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="btnLogout"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.5
+offset_top = -8.5
+offset_right = 25.5
+offset_bottom = 14.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "LOGOUT"
+label_settings = SubResource("LabelSettings_trhgc")
+
+[node name="LblUserName" type="Label" parent="."]
+offset_left = 477.0
+offset_top = 288.0
+offset_right = 668.0
+offset_bottom = 339.0
+label_settings = SubResource("LabelSettings_wpyj1")
+horizontal_alignment = 1
+vertical_alignment = 1

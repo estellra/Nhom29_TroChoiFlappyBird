@@ -17,16 +17,19 @@ public partial class LevelSelect : Control
 
 	private void OnEasyPressed()
 	{
+		GlobalData.currentdifficulty = GlobalData.difficulty.easy;
 		GetTree().ChangeSceneToFile("res://scene/main.tscn");
 	}
 
 	private void OnMediumPressed()
 	{
+		GlobalData.currentdifficulty = GlobalData.difficulty.medium;
 		GetTree().ChangeSceneToFile("res://scene/main.tscn");
 	}
 
 	private void OnHardPressed()
 	{
+		GlobalData.currentdifficulty = GlobalData.difficulty.hard;
 		GetTree().ChangeSceneToFile("res://scene/main.tscn");
 	}
 }

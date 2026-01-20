@@ -12,6 +12,7 @@ public partial class Cat : Node2D
 	private Sprite2D Ground;
 	private CatSpawner Cats;
 	
+	
 	public override void _Ready()
 	{
 		conmeo = GetNode<Sprite2D>("ConMeo");
@@ -21,7 +22,8 @@ public partial class Cat : Node2D
 		conmeo.ZIndex = 2;
 		conmeo.Scale = new Vector2(0.05f,0.05f);
 		conmeo.Position = new Vector2(-500, -500);
-
+		if(Cats.medium==false&&Cats.hard==true) Speed=700;
+		
 	}
 	
 	public void Setup(float PosY)
@@ -35,6 +37,7 @@ public partial class Cat : Node2D
 		{
 			return;	
 		}
+		Speed+=GlobalData.buffspeed;
 		Position = new Vector2(Position.X - Speed * (float)delta, Position.Y);
 		if (GlobalPosition.X < player.GlobalPosition.X-1300) 
 		{
@@ -54,12 +57,4 @@ public partial class Cat : Node2D
 		return new Rect2(pos, size);
 	}
 	
-	
-	public override void _Draw()
-	{
-		DrawRect
-		(
-			new Rect2(ToLocal(meomeo.Position), meomeo.Size),new Color(1, 0, 0),false
-		);
-}
 }
