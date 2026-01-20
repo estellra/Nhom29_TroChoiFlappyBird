@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class LeaderBoardButton : TextureRect
+public partial class LeaderBoardButton : TextureButton
 {
 	public override void _Ready()
 	{

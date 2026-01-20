@@ -1,0 +1,171 @@
+[gd_scene load_steps=11 format=3 uid="uid://cxxexfawhuji1"]
+
+[ext_resource type="Script" uid="uid://b2c5375xueefq" path="res://scene/login.cs" id="1_i5fi3"]
+[ext_resource type="Texture2D" uid="uid://drxoeprwsaoce" path="res://asset/bg.png" id="2_u7yg4"]
+[ext_resource type="Texture2D" uid="uid://ch5ea4mefs2un" path="res://asset/backbtn.png" id="3_ayshr"]
+[ext_resource type="Texture2D" uid="uid://3co53sdi8kkx" path="res://asset/border.png" id="3_i5fi3"]
+[ext_resource type="FontFile" uid="uid://3fq0m0ua6jhr" path="res://asset/04B_19__.TTF" id="4_ayshr"]
+[ext_resource type="Texture2D" uid="uid://0aqiggkveyt3" path="res://asset/bird.png" id="6_m7twt"]
+[ext_resource type="Texture2D" uid="uid://dyp02ihd3h242" path="res://asset/showpass.png" id="7_ayshr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7qh2k"]
+font = ExtResource("4_ayshr")
+font_size = 22
+
+[sub_resource type="LabelSettings" id="LabelSettings_vd3ky"]
+font = ExtResource("4_ayshr")
+font_size = 22
+
+[sub_resource type="LabelSettings" id="LabelSettings_8skgh"]
+font = ExtResource("4_ayshr")
+font_size = 22
+
+[node name="login" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i5fi3")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_u7yg4")
+
+[node name="btnBack" type="TextureButton" parent="."]
+layout_mode = 0
+anchor_right = 0.088541664
+anchor_bottom = 0.101111114
+texture_normal = ExtResource("3_ayshr")
+ignore_texture_size = true
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="UserName" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3454861
+anchor_top = 0.28666666
+anchor_right = 0.6987847
+anchor_bottom = 0.37333333
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_ayshr")
+theme_override_font_sizes/font_size = 22
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Pass" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.34288195
+anchor_top = 0.4722222
+anchor_right = 0.7013889
+anchor_bottom = 0.55333334
+offset_bottom = -3.0517578e-05
+theme_override_fonts/font = ExtResource("4_ayshr")
+theme_override_font_sizes/font_size = 22
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0.17881945
+anchor_top = 0.3011111
+anchor_right = 0.32899305
+anchor_bottom = 0.3588889
+text = "Username :"
+label_settings = SubResource("LabelSettings_7qh2k")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0.17534722
+anchor_top = 0.4677778
+anchor_right = 0.328125
+anchor_bottom = 0.53444445
+text = "Password : "
+label_settings = SubResource("LabelSettings_vd3ky")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="btnLogin" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5494792
+anchor_top = 0.68666667
+anchor_right = 0.7786458
+anchor_bottom = 0.7888889
+texture_normal = ExtResource("3_i5fi3")
+ignore_texture_size = true
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="btnLogin"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "LOGIN"
+label_settings = SubResource("LabelSettings_8skgh")
+
+[node name="btnForget" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.23871528
+anchor_top = 0.6933333
+anchor_right = 0.46788195
+anchor_bottom = 0.79555553
+texture_normal = ExtResource("3_i5fi3")
+ignore_texture_size = true
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="btnForget"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "FORGET PASSWORD"
+label_settings = SubResource("LabelSettings_8skgh")
+
+[node name="Bird" type="Sprite2D" parent="."]
+position = Vector2(569, 159)
+scale = Vector2(0.20016892, 0.17398646)
+texture = ExtResource("6_m7twt")
+
+[node name="btnShowPass" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.703125
+anchor_top = 0.47666666
+anchor_right = 0.7821181
+anchor_bottom = 0.54999995
+texture_normal = ExtResource("7_ayshr")
+ignore_texture_size = true
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true

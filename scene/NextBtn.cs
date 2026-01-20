@@ -3,6 +3,7 @@ using System;
 
 public partial class NextBtn : TextureRect
 {
+	/*
 	private UserData userData;
 	
 	public override void _Ready()
@@ -23,4 +24,5 @@ public partial class NextBtn : TextureRect
 			Leaderboard.AddScore(userData.UserName, userData.BestScore);
 		}
 	}
+	*/
 }

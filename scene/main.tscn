@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dfnd8kgl3vjg7"]
+[gd_scene load_steps=24 format=3 uid="uid://dfnd8kgl3vjg7"]
 
 [ext_resource type="Script" uid="uid://byxar7unu5jln" path="res://scene/Main.cs" id="1_p1hux"]
 [ext_resource type="PackedScene" uid="uid://dthp1brjdijx0" path="res://scene/player.tscn" id="2_h2yge"]
@@ -18,12 +18,10 @@
 [ext_resource type="PackedScene" uid="uid://bu7qgapuptuvv" path="res://scene/LeaderboardUI.tscn" id="18_gn2wi"]
 [ext_resource type="PackedScene" uid="uid://c2rrsjggbpy14" path="res://scene/GamePausedUI.tscn" id="19_p8adh"]
 [ext_resource type="PackedScene" uid="uid://yxkdxb8jyh40" path="res://scene/cat.tscn" id="20_fdqew"]
-[ext_resource type="PackedScene" uid="uid://crkt7xykjppdp" path="res://scene/ProfileUI.tscn" id="20_oldxj"]
 [ext_resource type="PackedScene" uid="uid://bmjolvthq3sh1" path="res://scene/cat_spawner.tscn" id="21_0d4pv"]
+[ext_resource type="PackedScene" uid="uid://bvdrjlfvmag5" path="res://scene/Sfx.tscn" id="21_4jm02"]
 [ext_resource type="PackedScene" uid="uid://ebkju5pan8o" path="res://scene/UserData.tscn" id="22_vneqc"]
-[ext_resource type="PackedScene" uid="uid://bbiyg4kpgymlb" path="res://scene/Leaderboard.tscn" id="23_io27d"]
 [ext_resource type="PackedScene" uid="uid://ci7gutr4aqbye" path="res://scene/GameOverUI.tscn" id="24_fa8t4"]
-[ext_resource type="PackedScene" uid="uid://b52xd72wniudl" path="res://scene/SettingUI.tscn" id="25_p8adh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gn2wi"]
 animations = [{
@@ -78,7 +76,7 @@ position = Vector2(201, 328)
 
 [node name="Sprite2D" parent="Player" index="0"]
 sprite_frames = SubResource("SpriteFrames_gn2wi")
-animation = &"skin_0"
+animation = &"skin_2"
 
 [node name="Camera" parent="." instance=ExtResource("6_4j5ol")]
 
@@ -94,22 +92,16 @@ position = Vector2(-1340, -654)
 
 [node name="CatSpawner" parent="." instance=ExtResource("21_0d4pv")]
 
+[node name="Sfx" parent="." instance=ExtResource("21_4jm02")]
+
 [node name="UserData" parent="." instance=ExtResource("22_vneqc")]
 
 [node name="GamePausedUI" parent="." instance=ExtResource("19_p8adh")]
 
-[node name="Leaderboard" parent="." instance=ExtResource("23_io27d")]
-
 [node name="GameOverUI" parent="." instance=ExtResource("24_fa8t4")]
 visible = false
 
-[node name="ProfileUI" parent="." instance=ExtResource("20_oldxj")]
-visible = false
-
 [node name="LeaderboardUI" parent="." instance=ExtResource("18_gn2wi")]
-visible = false
-
-[node name="SettingUI" parent="." instance=ExtResource("25_p8adh")]
 visible = false
 
 [editable path="Player"]

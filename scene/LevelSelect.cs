@@ -5,23 +5,31 @@ public partial class LevelSelect : Control
 {
 	public override void _Ready()
 	{
-		GetNode<Button>("VBoxContainer/BtnEasy").Pressed += OnEasyPressed;
-		GetNode<Button>("VBoxContainer/BtnMedium").Pressed += OnMediumPressed;
-		GetNode<Button>("VBoxContainer/BtnHard").Pressed += OnHardPressed;
+		var btnBack = GetNode<TextureButton>("btnBack");
+		btnBack.Pressed += () =>
+		{
+			GetTree().ChangeSceneToFile("res://scene/title_screen.tscn"); 
+		};
+		GetNode<TextureButton>("BtnEasy").Pressed += OnEasyPressed;
+		GetNode<TextureButton>("BtnMedium").Pressed += OnMediumPressed;
+		GetNode<TextureButton>("BtnHard").Pressed += OnHardPressed;
 	}
 
 	private void OnEasyPressed()
 	{
-		GetTree().ChangeSceneToFile("res://scene/level_easy.tscn");
+		GlobalData.currentdifficulty = GlobalData.difficulty.easy;
+		GetTree().ChangeSceneToFile("res://scene/main.tscn");
 	}
 
 	private void OnMediumPressed()
 	{
-		GetTree().ChangeSceneToFile("res://scene/level_medium.tscn");
+		GlobalData.currentdifficulty = GlobalData.difficulty.medium;
+		GetTree().ChangeSceneToFile("res://scene/main.tscn");
 	}
 
 	private void OnHardPressed()
 	{
-		GetTree().ChangeSceneToFile("res://scene/level_hard.tscn");
+		GlobalData.currentdifficulty = GlobalData.difficulty.hard;
+		GetTree().ChangeSceneToFile("res://scene/main.tscn");
 	}
 }

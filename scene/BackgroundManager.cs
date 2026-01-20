@@ -10,6 +10,12 @@ public partial class BackgroundManager : Node2D
 	private Sprite2D[] sprites = new Sprite2D[4];
 	private float textureWidth;
 	private float scaleFactor;
+	private string bg1;
+	private string bg2;
+	private enum timeofday{
+		morning,night
+	}
+	private timeofday currenttime=timeofday.morning;
 
 	public override void _Ready()
 	{
@@ -33,6 +39,8 @@ public partial class BackgroundManager : Node2D
 			sprites[i].ZIndex = -100;    
 			AddChild(sprites[i]);
 		}
+		bg1="res://asset/bg.png";
+		bg2="res://asset/nightbackground.png";
 	}
 
 	public override void _Process(double delta)
@@ -44,6 +52,34 @@ public partial class BackgroundManager : Node2D
 		for (int i = 0; i < 4; i++)
 		{
 			sprites[i].Position = new Vector2((currentSegment + i - 1) * textureWidth, camY);
+		}
+		if(GlobalData.time>=7)
+		{
+			if(currenttime==timeofday.morning)
+				{
+					SetBackground(GD.Load<Texture2D>(bg2));
+					currenttime=timeofday.night;
+				}
+			else
+				{
+					SetBackground(GD.Load<Texture2D>(bg1));
+					currenttime=timeofday.morning;
+				}
+				GlobalData.time-=7;
+		}
+			
+	}
+	public void SetBackground(Texture2D newTexture)
+	{
+		if (newTexture == null) return;
+		BgTexture = newTexture;
+		float viewportHeight = GetViewportRect().Size.Y;
+		scaleFactor = viewportHeight / BgTexture.GetHeight();
+		textureWidth = BgTexture.GetWidth() * scaleFactor;
+		for (int i = 0; i < sprites.Length; i++)
+		{
+			sprites[i].Texture = BgTexture;
+			sprites[i].Scale = new Vector2(scaleFactor, scaleFactor);
 		}
 	}
 }

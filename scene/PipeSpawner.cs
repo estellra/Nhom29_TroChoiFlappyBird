@@ -14,6 +14,8 @@ public partial class PipeSpawner : Node2D
 	public List<Pipe> PipeList=new List<Pipe>();
 	public bool stop;
 	public bool reset;
+	public bool medium=false;
+	public bool hard=false;
 	
 	public override void _Ready()
 	{
@@ -21,6 +23,16 @@ public partial class PipeSpawner : Node2D
 		PipeSpawn=(PackedScene)ResourceLoader.Load("res://scene/pipe.tscn");
 		stop=false;
 		reset=false;
+		if(GlobalData.currentdifficulty == GlobalData.difficulty.medium) 
+		{
+			medium=true;
+			hard=false;
+		}
+		else if(GlobalData.currentdifficulty == GlobalData.difficulty.hard) 
+		{
+			hard=true;
+			medium=false;
+		}
 	}
 	public override void _Process(double delta)
 	{

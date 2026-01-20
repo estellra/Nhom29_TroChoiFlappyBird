@@ -19,14 +19,9 @@ public partial class Player : Node2D
 	private Main main;
 	private RichTextLabel diem;
 	public int point;
-	private Audio audio;
+	private Sfx sfx;
 	private CanvasLayer GameOverUI;
 	
-	// Called when the node enters the scene tree for the first time.
-	public override void _Draw()
-	{
-		DrawCircle(Vector2.Zero, radiushitbox, new Color(1, 0, 0), false); 
-	}
 	public void Start()
 	{
 		Pipes.ClearPipe();
@@ -41,6 +36,9 @@ public partial class Player : Node2D
 		Cats.stop=false;
 		ground.reset();
 		point=0;
+		GlobalData.buffspeed=0;
+		GlobalData.speedcount=0;
+		GlobalData.time=0;
 		diem.Text=point.ToString();
 	}
 	public override void _Ready()
@@ -53,7 +51,9 @@ public partial class Player : Node2D
 		ground=GetNode<Ground>("../Ground");
 		diem=GetNode<RichTextLabel>("../ig_ui/Points");
 		this.ZIndex=2;
-		audio = GetNode<Audio>("/root/Audio");
+		sfx = GetNode<Sfx>("../Sfx");
+		main = GetNode<Main>("..");
+		sfx.PlayBgm();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -76,9 +76,16 @@ public partial class Player : Node2D
 			getCenter().X>pipe.BotPipe.Position.X+pipe.BotPipe.Size.X/2)
 				{
 					point++;
+					GlobalData.time++;
+					GlobalData.speedcount++;
 					pipe.pointed=true;
 					diem.Text=point.ToString();
-					audio.PlayPoint();
+					sfx.PlayPoint();
+					if(	GlobalData.speedcount>=5)
+					{
+								GlobalData.speedcount-=5;
+								GlobalData.buffspeed+=1;
+					}
 				}	
 		}
 		return point.ToString();
@@ -139,7 +146,7 @@ public partial class Player : Node2D
 	{
 		if(Input.IsActionJustPressed("control_jump")){
 			velocity.Y=jump;
-			audio.PlayFlap();
+			sfx.PlayFlap();
 		}
 		//if(Input.IsActionJustPressed("control_pause"))
 	}
@@ -151,16 +158,16 @@ public partial class Player : Node2D
 	}
 	
 	private void Die()
-{
-	if (dead) return;
-	var db = new DatabaseManager();
-	db.SaveScore("Player", point);
-	GetNode<UserData>("../UserData").CheckAndSave(point);
-	dead = true;
-	audio.PlayHit(); 
-	if (main != null) 
 	{
-		main.GameOver();
+		if (dead) return;
+		//var db = new DatabaseManager();
+		//db.SaveScore("Player", point);
+	//	GetNode<UserData>("../UserData").CheckAndSave(point);
+		dead = true;
+		sfx.PlayHit(); 
+		if (main != null) 
+		{
+			main.GameOver();
+		}
 	}
-}
 }

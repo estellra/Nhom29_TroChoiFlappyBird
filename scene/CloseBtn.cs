@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class CloseBtn : TextureRect
+public partial class CloseBtn : TextureButton  
 {
 	public override void _Ready()
 	{

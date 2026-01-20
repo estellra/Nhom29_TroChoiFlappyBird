@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class GameOverRestartButton : TextureRect
+public partial class GameOverRestartButton : TextureButton
 {
 	
 	public override void _Ready()

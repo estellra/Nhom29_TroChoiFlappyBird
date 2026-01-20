@@ -1,0 +1,131 @@
+[gd_scene load_steps=8 format=3 uid="uid://c8pt5dnh0sfq0"]
+
+[ext_resource type="Script" uid="uid://cyibnfctac0qw" path="res://scene/ranking.cs" id="1_fauor"]
+[ext_resource type="Texture2D" uid="uid://drxoeprwsaoce" path="res://asset/bg.png" id="2_03caq"]
+[ext_resource type="Texture2D" uid="uid://3co53sdi8kkx" path="res://asset/border.png" id="3_n5c1y"]
+[ext_resource type="FontFile" uid="uid://3fq0m0ua6jhr" path="res://asset/04B_19__.TTF" id="4_u87s5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_skcb2"]
+font = ExtResource("4_u87s5")
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_pdqk1"]
+font = ExtResource("4_u87s5")
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_qhjic"]
+font = ExtResource("4_u87s5")
+font_size = 25
+
+[node name="ranking" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fauor")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_03caq")
+
+[node name="btnGuest" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.34375
+anchor_top = 0.23222223
+anchor_right = 0.65625
+anchor_bottom = 0.36
+grow_horizontal = 2
+texture_normal = ExtResource("3_n5c1y")
+ignore_texture_size = true
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="btnGuest"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "GUEST"
+label_settings = SubResource("LabelSettings_skcb2")
+
+[node name="btnLogin" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -184.0
+offset_top = -56.5
+offset_right = 184.0
+offset_bottom = 56.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_n5c1y")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="btnLogin"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "LOGIN"
+label_settings = SubResource("LabelSettings_pdqk1")
+
+[node name="btnRegister" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.34375
+anchor_top = 0.65555555
+anchor_right = 0.6614583
+anchor_bottom = 0.79
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("3_n5c1y")
+ignore_texture_size = true
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="btnRegister"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "REGISTER"
+label_settings = SubResource("LabelSettings_qhjic")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 455)

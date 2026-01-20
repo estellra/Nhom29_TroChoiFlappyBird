@@ -11,6 +11,8 @@ public partial class CatSpawner : Node2D
 	public List<Cat> CatList=new List<Cat>();
 	public bool stop;
 	public bool reset;
+	public bool medium=false;
+	public bool hard=false;
 	
 	public override void _Ready()
 	{
@@ -18,9 +20,20 @@ public partial class CatSpawner : Node2D
 		CatSpawn=(PackedScene)ResourceLoader.Load("res://scene/cat.tscn");
 		stop=false;
 		reset=false;
+		if(GlobalData.currentdifficulty == GlobalData.difficulty.medium) 
+		{
+			medium=true;
+			hard=false;
+		}
+		else if(GlobalData.currentdifficulty == GlobalData.difficulty.hard) 
+		{
+			hard=true;
+			medium=false;
+		} 
 	}
 	public override void _Process(double delta)
 	{
+		if(!medium&&!hard) return;
 		if(stop) return;
 		timer-=(float)delta;
 		if(timer<=(float)0)

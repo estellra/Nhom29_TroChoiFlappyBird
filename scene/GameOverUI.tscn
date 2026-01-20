@@ -1,11 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://ci7gutr4aqbye"]
+[gd_scene load_steps=14 format=3 uid="uid://ci7gutr4aqbye"]
 
 [ext_resource type="Script" uid="uid://bh5vati556w3h" path="res://scene/GameOverUI.cs" id="1_xrxal"]
 [ext_resource type="FontFile" uid="uid://3fq0m0ua6jhr" path="res://asset/04B_19__.TTF" id="5_mcikm"]
 [ext_resource type="Script" uid="uid://gl2qmmgnqqi0" path="res://scene/LeaderBoardButton.cs" id="8_p5xhv"]
+[ext_resource type="Texture2D" uid="uid://dqkuc62btfgq2" path="res://asset/homebutton.png" id="10_1hloy"]
 [ext_resource type="Texture2D" uid="uid://lobtwk13cn3n" path="res://asset/GameOverPanel.png" id="12_v3brr"]
 [ext_resource type="Script" uid="uid://ccs35imgdt6if" path="res://scene/GameOverRestartButton.cs" id="13_xvro8"]
-[ext_resource type="Texture2D" uid="uid://c635bjyp8wkpb" path="res://asset/gameover.png" id="16_54m0g"]
+[ext_resource type="Texture2D" uid="uid://c635bjyp8wkpb" path="res://asset/GameOver.png" id="16_54m0g"]
 [ext_resource type="Texture2D" uid="uid://bc34hs5bgcvpu" path="res://asset/RestartButton.png" id="16_plv3a"]
 [ext_resource type="Texture2D" uid="uid://cfxyuejd34fy8" path="res://asset/RankingButton.png" id="18_54m0g"]
 [ext_resource type="Texture2D" uid="uid://bj63qxulabgit" path="res://asset/BestStatus.png" id="20_p3h76"]
@@ -99,33 +100,28 @@ texture = ExtResource("16_54m0g")
 expand_mode = 5
 stretch_mode = 4
 
-[node name="Btn" type="HBoxContainer" parent="ScorePanel"]
+[node name="GameOverRestart" type="TextureButton" parent="ScorePanel"]
 process_mode = 3
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -496.70612
-offset_top = 394.6723
-offset_right = 3000.294
-offset_bottom = 1077.3853
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.2813465, 0.18556434)
-theme_override_constants/separation = 800
-
-[node name="GameOverRestartButton" type="TextureRect" parent="ScorePanel/Btn"]
-process_mode = 3
-layout_mode = 2
-texture = ExtResource("16_plv3a")
+layout_mode = 0
+offset_left = 192.85657
+offset_top = 754.4872
+offset_right = 539.7723
+offset_bottom = 876.2488
+texture_normal = ExtResource("16_plv3a")
+ignore_texture_size = true
+stretch_mode = 6
 script = ExtResource("13_xvro8")
 
-[node name="RankingButton" type="TextureRect" parent="ScorePanel/Btn"]
+[node name="RankingButton" type="TextureButton" parent="ScorePanel"]
 process_mode = 3
-layout_mode = 2
-texture = ExtResource("18_54m0g")
+layout_mode = 0
+offset_left = 765.80194
+offset_top = 754.4872
+offset_right = 1158.8235
+offset_bottom = 874.07446
+texture_normal = ExtResource("18_54m0g")
+ignore_texture_size = true
+stretch_mode = 6
 script = ExtResource("8_p5xhv")
 
 [node name="BestStatus" type="TextureRect" parent="ScorePanel"]
@@ -138,6 +134,16 @@ offset_bottom = 439.56525
 scale = Vector2(1.0640246, 1.0806916)
 size_flags_vertical = 0
 texture = ExtResource("20_p3h76")
+
+[node name="btnHome" type="TextureButton" parent="ScorePanel"]
+layout_mode = 0
+offset_left = 590.376
+offset_top = 761.01013
+offset_right = 693.27
+offset_bottom = 867.5515
+texture_normal = ExtResource("10_1hloy")
+ignore_texture_size = true
+stretch_mode = 6
 
 [node name="Medal" type="TextureRect" parent="."]
 offset_left = 14.0

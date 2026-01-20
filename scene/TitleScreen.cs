@@ -6,12 +6,18 @@ public partial class TitleScreen : CanvasLayer
 {
 	private Node2D player;
 	private Control title;
+	private TextureButton leftbtn;
+	private TextureButton rightbtn;
 	private float playerY;
 	private float titleY;
+	private float lbusery;
+	private float leftbtny;
+	private float rightbtny;
 	private float dy = 40;
 	private float time = 1.5F;
 	private List<RichTextLabel> menus;
 	private int index;
+	private int hoverindex = -1;
 	private string HIGHLIGHT_START_TAG = "[color=yellow]";
 	private string HIGHLIGHT_END_TAG = "[/color]";
 	private string DEFAULT_COLOR_TAG = "[color=white]";
@@ -19,35 +25,84 @@ public partial class TitleScreen : CanvasLayer
 	private int TotalSkin = 3;
 	public override void _Ready()
 	{
-		 var audio = GetNode<Audio>("/root/Audio");
-		audio.PlayBgm();
+		var lblUser = GetNode<Label>("LblUserName"); 
+		leftbtn=GetNode<TextureButton>("btnLeft");
+		rightbtn=GetNode<TextureButton>("btnRight");
+		if (GlobalData.CurrentUser != "")
+		{
+			lblUser.Text = "Player: " + GlobalData.CurrentUser;
+		}
+		else
+		{
+			lblUser.Text = "Player: Guest"; 
+		}
 		
+		var btnLogout = GetNode<TextureButton>("btnLogout"); 
+		btnLogout.Pressed += () =>
+		{
+			GlobalData.CurrentUser = "";
+			GlobalData.CurrentBestScore = 0;
+			GetTree().ChangeSceneToFile("res://scene/ranking.tscn"); 
+		};
+		
+		var btnback = GetNode<TextureButton>("btnBack");
+		btnback.Pressed += () =>
+		{
+			GetTree().ChangeSceneToFile("res://scene/ranking.tscn"); 
+		};
 		SkinIdx = GlobalData.SkinDangChon;
-
 		player = GetNode<Node2D>("Player");
 		title = GetNode<Control>("Title");
 		playerY = player.Position.Y;
 		titleY = title.Position.Y;
+		lbusery=lblUser.Position.Y;
+		leftbtny=leftbtn.Position.Y;
+		rightbtny=rightbtn.Position.Y;
 		movement(player, playerY, dy, time);
 		movement(title, titleY, dy, time);
-		
+		movement(lblUser, lbusery, dy, time);
+		movement(leftbtn, leftbtny, dy, time);
+		movement(rightbtn,rightbtny, dy, time);
 		menus = new List<RichTextLabel>();
 		index = -1;
 		VBoxContainer item = GetNode<VBoxContainer>("TItleScreenMenu");
+		int j=0;
 		foreach (var i in item.GetChildren())
 		{
 			if (i is RichTextLabel label)
 			{
-				menus.Add(label);
+				int temp=j;
 				label.SetMeta("original_text", label.Text);
+				label.MouseEntered += () =>
+			{
+				hoverindex=temp;
+				if (index != -1 && index < menus.Count)
+					removehighlight(menus[index]);
+				  	index = temp;
+					updatehighlight();
+			};
+			label.MouseExited += () =>
+			{
+				hoverindex=-1;
+				removehighlight(label);
+				index = -1;
+			};
+			label.GuiInput += (InputEvent e) =>
+			{
+				if (e is InputEventMouseButton mb
+					&& mb.Pressed
+					&& mb.ButtonIndex == MouseButton.Left
+					&& hoverindex == temp) 
+				{
+					enter(temp);
+				}
+			};
+				menus.Add(label);
+				j++;
 			}
 		}
-		if (menus.Count > 0)
-		{
 			index = -1;
 			updatehighlight();
-		}
-
 		var btnLeft = GetNode<TextureButton>("btnLeft");
 		var btnRight = GetNode<TextureButton>("btnRight");
 		btnLeft.Pressed += OnLeftPressed;
@@ -66,6 +121,7 @@ public partial class TitleScreen : CanvasLayer
 		}
 		if (Input.IsActionJustPressed("ui_enter"))
 		{
+			if(hoverindex==-1)return;
 			enter(index);
 			GetViewport().SetInputAsHandled();
 		}
@@ -117,6 +173,13 @@ public partial class TitleScreen : CanvasLayer
 		}
 		updatehighlight();
 	}
+	private void hover(int newindex)
+	{
+		if (newindex == index) return;
+		removehighlight(menus[index]);
+		index = newindex;
+		updatehighlight();
+	}
 
 	private void updatehighlight()
 	{
@@ -140,12 +203,12 @@ public partial class TitleScreen : CanvasLayer
 			case 0:
 				GlobalData.SkinDangChon = SkinIdx;
 				SceneTree tree = GetTree();
-				tree.ChangeSceneToFile("res://scene/main.tscn");
+				tree.ChangeSceneToFile("res://scene/level_select.tscn");
 				break;
 			case 1:
+				GetTree().ChangeSceneToFile("res://scene/LeaderboardUI.tscn");
 				break;
 			case 2:
-				GetNode<CanvasLayer>("SettingUI").Show();
 				break;
 			case 3:
 				GetTree().Quit();

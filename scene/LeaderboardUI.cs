@@ -1,36 +1,47 @@
 using Godot;
+using System.Collections.Generic;
 
 public partial class LeaderboardUI : CanvasLayer
 {
 	private VBoxContainer _list;
-	private Label template;
+	private Control template;
 
 	public override void _Ready()
 	{
+		// Lấy đúng đường dẫn theo hình
 		_list = GetNode<VBoxContainer>("BoardPanel/Scroll/List");
-		template = GetNode<Label>("BoardPanel/Scroll/List/Template");
-	}
-
-	public void Refresh()
-	{
-		foreach (var child in _list.GetChildren())
-			(child as Node)?.QueueFree();
-
-		var entries = Leaderboard.Load();
-
-		if (entries.Count == 0)
-		{
-			_list.AddChild(new Label { Text = "No scores yet." });
-			return;
+		template = GetNode<Control>("BoardPanel/Scroll/List/Template");
+		
+		// Ẩn mẫu đi
+		template.Visible = false;
+		// Xử lý nút Đóng (X)
+		var btnClose = GetNode<TextureButton>("BoardPanel/CloseBtn");
+		if (btnClose != null) {
+			btnClose.Pressed += () => GetTree().ChangeSceneToFile("res://scene/title_screen.tscn");
 		}
 
-		for (int i = 0; i < entries.Count; i++)
+		RefreshLeaderboard();
+	}
+
+	public void RefreshLeaderboard()
+	{
+		foreach (var child in _list.GetChildren())
 		{
-			var e = entries[i];
-			var row = template.Duplicate() ;
-			row.GetNode<Label>("Tem/No").Text = "  "+ (i+1).ToString();
-			row.GetNode<Label>("Tem/Name").Text = e.PlayerName;
-			row.GetNode<Label>("Tem/BestScore").Text = e.Score.ToString();
+			if (child != template) ((Node)child).QueueFree();
+		}
+		List<LeaderboardItem> topPlayers = DatabaseManager.GetLeaderboard();
+		if (topPlayers == null || topPlayers.Count == 0)
+		{
+			return;
+		}
+		for (int i = 0; i < topPlayers.Count; i++)
+		{
+			var player = topPlayers[i];
+			var row = (Control)template.Duplicate();
+			row.Visible = true; 
+			row.GetNode<Label>("Tem/No").Text = (i + 1).ToString();
+			row.GetNode<Label>("Tem/Name").Text = player.Name;
+			row.GetNode<Label>("Tem/BestScore").Text = player.Score.ToString();
 			_list.AddChild(row);
 		}
 	}
