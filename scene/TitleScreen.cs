@@ -19,6 +19,9 @@ public partial class TitleScreen : CanvasLayer
 	private int TotalSkin = 3;
 	public override void _Ready()
 	{
+		 var audio = GetNode<Audio>("/root/Audio");
+		audio.PlayBgm();
+		
 		SkinIdx = GlobalData.SkinDangChon;
 
 		player = GetNode<Node2D>("Player");
@@ -142,6 +145,7 @@ public partial class TitleScreen : CanvasLayer
 			case 1:
 				break;
 			case 2:
+				GetNode<CanvasLayer>("SettingUI").Show();
 				break;
 			case 3:
 				GetTree().Quit();

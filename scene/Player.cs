@@ -19,7 +19,7 @@ public partial class Player : Node2D
 	private Main main;
 	private RichTextLabel diem;
 	public int point;
-	private Sfx sfx;
+	private Audio audio;
 	private CanvasLayer GameOverUI;
 	
 	// Called when the node enters the scene tree for the first time.
@@ -53,8 +53,7 @@ public partial class Player : Node2D
 		ground=GetNode<Ground>("../Ground");
 		diem=GetNode<RichTextLabel>("../ig_ui/Points");
 		this.ZIndex=2;
-		sfx = GetNode<Sfx>("../Sfx");
-		sfx.PlayBgm();
+		audio = GetNode<Audio>("/root/Audio");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -79,7 +78,7 @@ public partial class Player : Node2D
 					point++;
 					pipe.pointed=true;
 					diem.Text=point.ToString();
-					sfx.PlayPoint();
+					audio.PlayPoint();
 				}	
 		}
 		return point.ToString();
@@ -140,7 +139,7 @@ public partial class Player : Node2D
 	{
 		if(Input.IsActionJustPressed("control_jump")){
 			velocity.Y=jump;
-			sfx.PlayFlap();
+			audio.PlayFlap();
 		}
 		//if(Input.IsActionJustPressed("control_pause"))
 	}
@@ -158,13 +157,10 @@ public partial class Player : Node2D
 	db.SaveScore("Player", point);
 	GetNode<UserData>("../UserData").CheckAndSave(point);
 	dead = true;
-	sfx.PlayHit(); 
+	audio.PlayHit(); 
 	if (main != null) 
 	{
 		main.GameOver();
 	}
 }
-
-
-
 }
