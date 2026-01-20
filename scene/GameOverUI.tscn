@@ -137,10 +137,10 @@ texture = ExtResource("20_p3h76")
 
 [node name="btnHome" type="TextureButton" parent="ScorePanel"]
 layout_mode = 0
-offset_left = 406.51605
-offset_top = 504.441
-offset_right = 888.7416
-offset_bottom = 1091.7902
+offset_left = 590.376
+offset_top = 761.01013
+offset_right = 693.27
+offset_bottom = 867.5515
 texture_normal = ExtResource("10_1hloy")
 ignore_texture_size = true
 stretch_mode = 6

@@ -48,6 +48,11 @@ public partial class register : Control
 				OS.Alert("Mật khẩu xác nhận không trùng khớp.\nVui lòng kiểm tra lại!", "❌ Lỗi Mật Khẩu");
 				return; 
 			}
+			if (!e.ToLower().EndsWith("@gmail.com"))
+			{
+				OS.Alert("Email không hợp lệ!\nVui lòng sử dụng tài khoản Google (@gmail.com)", "❌ Lỗi Email");
+				return;
+			}
 			
 			int result = DatabaseManager.Register(u, p, e);
 			

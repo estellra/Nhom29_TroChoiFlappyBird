@@ -5,10 +5,8 @@ using Microsoft.Data.SqlClient;
 
 public static class DatabaseManager
 {
-	// GIỮ NGUYÊN CHUỖI KẾT NỐI CỦA ÔNG
 	private static string connectionString = @"Server=.\CSDL;Database=FlappyBirdDB;Integrated Security=True;TrustServerCertificate=True;";
 
-	// 1. ĐĂNG KÝ (Sửa lại: Chỉ tạo Account, không tạo Score rác)
 	public static int Register(string username, string password, string email)
 	{
 		try
@@ -41,12 +39,11 @@ public static class DatabaseManager
 					cmd.ExecuteNonQuery();
 				}
 			}
-			return 0; // Thành công
+			return 0; 
 		}
 		catch (Exception e) { GD.PrintErr(e.Message); return -1; }
 	}
 
-	// 2. ĐĂNG NHẬP (Sửa lại: Tìm điểm cao nhất trong lịch sử để load vào game)
 	public static bool Login(string username, string password, out int bestScore)
 	{
 		bestScore = 0;
@@ -55,7 +52,6 @@ public static class DatabaseManager
 			using (SqlConnection conn = new SqlConnection(connectionString))
 			{
 				conn.Open();
-				// Lấy ID và tìm điểm cao nhất (MAX) trong bảng Scores
 				string query = @"
                     SELECT a.AccountID, 
                            (SELECT MAX(Score) FROM Scores WHERE AccountID = a.AccountID) as MaxScore
@@ -71,7 +67,6 @@ public static class DatabaseManager
 					{
 						if (reader.Read()) // Nếu tìm thấy user
 						{
-							// Nếu MaxScore là null (chưa chơi ván nào) thì trả về 0
 							if (reader["MaxScore"] != DBNull.Value)
 							{
 								bestScore = Convert.ToInt32(reader["MaxScore"]);
@@ -93,7 +88,6 @@ public static class DatabaseManager
 			using (SqlConnection conn = new SqlConnection(connectionString))
 			{
 				conn.Open();
-				// Tìm ID của user rồi Insert điểm mới vào
 				string query = @"
                     INSERT INTO Scores (AccountID, Score)
 					SELECT AccountID, @s FROM Accounts WHERE Username = @u";
@@ -109,7 +103,6 @@ public static class DatabaseManager
 		catch (Exception e) { GD.PrintErr("Lỗi SaveScore: " + e.Message); }
 	}
 
-	// 4. LẤY BẢNG XẾP HẠNG (Sửa lại: Gom nhóm theo User, lấy điểm cao nhất của họ)
 	public static List<LeaderboardItem> GetLeaderboard()
 	{
 		var list = new List<LeaderboardItem>();
@@ -118,14 +111,12 @@ public static class DatabaseManager
 			using (SqlConnection conn = new SqlConnection(connectionString))
 			{
 				conn.Open();
-				// Câu lệnh thần thánh: Gom mỗi người 1 dòng với điểm cao nhất của họ
 				string query = @"
                     SELECT TOP 10 a.Username, MAX(s.Score) as BestScore
                     FROM Scores s
                     JOIN Accounts a ON s.AccountID = a.AccountID
                     GROUP BY a.Username
 					ORDER BY BestScore DESC";
-
 				using (SqlCommand cmd = new SqlCommand(query, conn))
 				{
 					using (SqlDataReader reader = cmd.ExecuteReader())
@@ -145,10 +136,9 @@ public static class DatabaseManager
 		catch (Exception e) { GD.PrintErr("Lỗi BXH: " + e.Message); }
 		return list;
 	}
-	// ... (Giữ nguyên các hàm SaveOTP, VerifyOTP, ResetPassword của ông ở đây) ...
+	
 	public static void SaveOTP(string email, string otp)
 	{
-		 // Code cũ giữ nguyên
 		 try {
 			using (SqlConnection conn = new SqlConnection(connectionString)) {
 				conn.Open();
@@ -163,7 +153,6 @@ public static class DatabaseManager
 	}
 	public static bool VerifyOTP(string email, string otpInput)
 	{
-		// Code cũ giữ nguyên
 		 try {
 			using (SqlConnection conn = new SqlConnection(connectionString)) {
 				conn.Open();
@@ -179,7 +168,6 @@ public static class DatabaseManager
 	}
 	public static void ResetPassword(string email, string newPass)
 	{
-		// Code cũ giữ nguyên
 		  try {
 			using (SqlConnection conn = new SqlConnection(connectionString)) {
 				conn.Open();
