@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dfnd8kgl3vjg7"]
+[gd_scene load_steps=25 format=3 uid="uid://dfnd8kgl3vjg7"]
 
 [ext_resource type="Script" uid="uid://byxar7unu5jln" path="res://scene/Main.cs" id="1_p1hux"]
 [ext_resource type="PackedScene" uid="uid://dthp1brjdijx0" path="res://scene/player.tscn" id="2_h2yge"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://bmjolvthq3sh1" path="res://scene/cat_spawner.tscn" id="21_0d4pv"]
 [ext_resource type="PackedScene" uid="uid://bvdrjlfvmag5" path="res://scene/Audio.tscn" id="21_4jm02"]
 [ext_resource type="PackedScene" uid="uid://ebkju5pan8o" path="res://scene/UserData.tscn" id="22_vneqc"]
+[ext_resource type="PackedScene" uid="uid://b52xd72wniudl" path="res://scene/SettingUI.tscn" id="23_gtqqq"]
 [ext_resource type="PackedScene" uid="uid://ci7gutr4aqbye" path="res://scene/GameOverUI.tscn" id="24_fa8t4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gn2wi"]
@@ -103,5 +104,8 @@ visible = false
 visible = false
 
 [node name="Audio" parent="." instance=ExtResource("21_4jm02")]
+
+[node name="SettingUI" parent="." instance=ExtResource("23_gtqqq")]
+visible = false
 
 [editable path="Player"]
