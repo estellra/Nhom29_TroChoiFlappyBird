@@ -1,0 +1,22 @@
+CREATE DATABASE FlappyBirdDB;
+GO
+
+USE FlappyBirdDB;
+GO
+
+CREATE TABLE Accounts (
+    AccountID INT PRIMARY KEY IDENTITY(1,1),
+    Username NVARCHAR(50) UNIQUE NOT NULL,
+    Password NVARCHAR(50) NOT NULL,
+    Email NVARCHAR(100),
+    OTP_Code VARCHAR(6) NULL
+);
+GO
+
+CREATE TABLE Scores (
+    ScoreID INT PRIMARY KEY IDENTITY(1,1),
+    AccountID INT NOT NULL,
+    Score INT NOT NULL,
+    FOREIGN KEY (AccountID) REFERENCES Accounts(AccountID)
+);
+GO
