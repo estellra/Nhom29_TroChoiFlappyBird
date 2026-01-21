@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class ranking : Control
+public partial class Ranking : Control
 {
 	public override void _Ready()
 	{
