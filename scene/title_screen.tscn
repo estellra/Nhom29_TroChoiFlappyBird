@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bt60g6crbmhn8"]
+[gd_scene load_steps=23 format=3 uid="uid://bt60g6crbmhn8"]
 
 [ext_resource type="Texture2D" uid="uid://drxoeprwsaoce" path="res://asset/bg.png" id="1_i58fu"]
 [ext_resource type="Script" uid="uid://8ed6lh0icail" path="res://scene/TitleScreen.cs" id="1_t18hh"]
@@ -16,8 +16,9 @@
 [ext_resource type="FontFile" uid="uid://bxy3cry7618ld" path="res://asset/PrStart.ttf" id="10_rbyiy"]
 [ext_resource type="Script" uid="uid://d3sxnqq4tslcy" path="res://scene/TitleScreenState1.cs" id="12_t65bv"]
 [ext_resource type="Texture2D" uid="uid://c87pf5ye413de" path="res://asset/Arrow.png" id="13_tn2ht"]
-[ext_resource type="Texture2D" uid="uid://ch5ea4mefs2un" path="res://asset/backbtn.png" id="17_o67lm"]
-[ext_resource type="Texture2D" uid="uid://3co53sdi8kkx" path="res://asset/border.png" id="18_1tx3d"]
+[ext_resource type="Texture2D" uid="uid://bh3rrqoy8w7ys" path="res://asset/backbtn.png" id="17_o67lm"]
+[ext_resource type="Texture2D" uid="uid://fxmeirfqfnfl" path="res://asset/border.png" id="18_1tx3d"]
+[ext_resource type="PackedScene" uid="uid://b52xd72wniudl" path="res://scene/SettingUI.tscn" id="19_trhgc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rbyiy"]
 animations = [{
@@ -270,3 +271,6 @@ offset_bottom = 339.0
 label_settings = SubResource("LabelSettings_wpyj1")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="SettingUI" parent="." instance=ExtResource("19_trhgc")]
+visible = false

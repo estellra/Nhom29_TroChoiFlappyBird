@@ -209,6 +209,7 @@ public partial class TitleScreen : CanvasLayer
 				GetTree().ChangeSceneToFile("res://scene/LeaderboardUI.tscn");
 				break;
 			case 2:
+				GetNode<CanvasLayer>("SettingUI").Show();
 				break;
 			case 3:
 				GetTree().Quit();
