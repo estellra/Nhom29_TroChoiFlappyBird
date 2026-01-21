@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://dpwsbv5y6ceve" path="res://scene/CloseBtn.cs" id="2_m5ukk"]
 [ext_resource type="Texture2D" uid="uid://drxoeprwsaoce" path="res://asset/bg.png" id="2_s0uqw"]
 [ext_resource type="FontFile" uid="uid://3fq0m0ua6jhr" path="res://asset/04B_19__.TTF" id="3_xhg0i"]
-[ext_resource type="Texture2D" uid="uid://ch5ea4mefs2un" path="res://asset/backbtn.png" id="5_2c0b0"]
+[ext_resource type="Texture2D" uid="uid://bh3rrqoy8w7ys" path="res://asset/backbtn.png" id="5_2c0b0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_664ww"]
 bg_color = Color(0.84313726, 0.77254903, 0.5921569, 1)
@@ -100,24 +100,28 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Template" type="Label" parent="BoardPanel/Scroll/List"]
+custom_minimum_size = Vector2(200, 3)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_664ww")
 label_settings = SubResource("LabelSettings_s0uqw")
 
 [node name="Tem" type="HBoxContainer" parent="BoardPanel/Scroll/List/Template"]
+custom_minimum_size = Vector2(3, 0)
 layout_mode = 0
-offset_left = 8.150017
-offset_top = 2.7309723
-offset_right = 680.15
-offset_bottom = 19.730972
-scale = Vector2(1.1, 0.996)
+offset_left = -5.7617464
+offset_top = 3.7346017
+offset_right = 666.2383
+offset_bottom = 20.734604
+scale = Vector2(1.8573443, 0.7217974)
 size_flags_vertical = 6
+theme_override_constants/separation = -300
 
 [node name="No" type="Label" parent="BoardPanel/Scroll/List/Template/Tem"]
+custom_minimum_size = Vector2(0, 3)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 19
+theme_override_font_sizes/font_size = 10
 text = "  NO"
 label_settings = SubResource("LabelSettings_gswu3")
 vertical_alignment = 2
@@ -126,16 +130,17 @@ vertical_alignment = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 19
+theme_override_font_sizes/font_size = 10
 text = "NAME"
 label_settings = SubResource("LabelSettings_tf6r7")
 vertical_alignment = 2
 
 [node name="BestScore" type="Label" parent="BoardPanel/Scroll/List/Template/Tem"]
+custom_minimum_size = Vector2(3, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 19
+theme_override_font_sizes/font_size = 10
 text = "BEST SCORE"
 label_settings = SubResource("LabelSettings_hydgx")
 vertical_alignment = 2
@@ -151,8 +156,10 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_2c0b0")
 
 [node name="Tag" type="HBoxContainer" parent="BoardPanel/Label"]
 layout_mode = 0
-offset_right = 347.96982
-offset_bottom = 27.249245
+offset_left = -0.20596515
+offset_top = 1.1752561
+offset_right = 347.76385
+offset_bottom = 28.424501
 scale = Vector2(0.111673914, 0.79094815)
 size_flags_vertical = 6
 
@@ -181,7 +188,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("3_xhg0i")
 theme_override_font_sizes/font_size = 19
-text = "BEST SCORE"
+text = " BEST SCORE"
 vertical_alignment = 2
 
 [node name="btnBack" type="TextureButton" parent="."]
