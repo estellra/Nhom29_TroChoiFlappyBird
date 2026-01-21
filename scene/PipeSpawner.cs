@@ -41,7 +41,7 @@ public partial class PipeSpawner : Node2D
 		if(timer<=(float)0)
 		{
 			SpawnPipe();
-			timer=(float)1.5 ;
+			timer=(float)1.25 ;
 		}
 	}
 

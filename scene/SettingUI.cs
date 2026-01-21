@@ -16,8 +16,12 @@ public partial class SettingUI : CanvasLayer
 	{
 		_sfxBar = GetNodeOrNull<SegBar>(SfxBarPath);
 		_bgmSlider = GetNodeOrNull<HSlider>(BgmSliderPath);
-
 		CallDeferred(MethodName.LateBind);
+		var xbutton = GetNode<TextureButton>("xbtn"); 
+		xbutton.Pressed += () =>
+		{
+			Hide();
+		};
 	}
 
 	private void LateBind()

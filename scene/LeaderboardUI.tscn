@@ -1,11 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://bu7qgapuptuvv"]
+[gd_scene load_steps=12 format=3 uid="uid://bu7qgapuptuvv"]
 
 [ext_resource type="Script" uid="uid://cv8t5yx6lccw" path="res://scene/LeaderboardUI.cs" id="1_664ww"]
 [ext_resource type="Texture2D" uid="uid://cw1f4kilpxscs" path="res://asset/RankingFrame.png" id="1_di1xv"]
 [ext_resource type="Script" uid="uid://dpwsbv5y6ceve" path="res://scene/CloseBtn.cs" id="2_m5ukk"]
 [ext_resource type="Texture2D" uid="uid://drxoeprwsaoce" path="res://asset/bg.png" id="2_s0uqw"]
 [ext_resource type="FontFile" uid="uid://3fq0m0ua6jhr" path="res://asset/04B_19__.TTF" id="3_xhg0i"]
-[ext_resource type="Texture2D" uid="uid://bh3rrqoy8w7ys" path="res://asset/backbtn.png" id="5_2c0b0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_664ww"]
 bg_color = Color(0.84313726, 0.77254903, 0.5921569, 1)
@@ -190,12 +189,3 @@ theme_override_fonts/font = ExtResource("3_xhg0i")
 theme_override_font_sizes/font_size = 19
 text = " BEST SCORE"
 vertical_alignment = 2
-
-[node name="btnBack" type="TextureButton" parent="."]
-anchors_preset = -1
-anchor_right = 0.088541664
-anchor_bottom = 0.101111114
-texture_normal = ExtResource("5_2c0b0")
-ignore_texture_size = true
-stretch_mode = 6
-metadata/_edit_use_anchors_ = true

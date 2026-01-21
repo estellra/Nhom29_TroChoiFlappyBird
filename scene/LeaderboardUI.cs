@@ -37,10 +37,11 @@ public partial class LeaderboardUI : CanvasLayer
 		for (int i = 0; i < topPlayers.Count; i++)
 		{
 			var player = topPlayers[i];
+			string ten = player.Name.Length > 12 ? player.Name.Substring(0, 10)+".." : player.Name;
 			var row = (Control)template.Duplicate();
 			row.Visible = true; 
-			row.GetNode<Label>("Tem/No").Text = (i + 1).ToString();
-			row.GetNode<Label>("Tem/Name").Text = player.Name;
+			row.GetNode<Label>("Tem/No").Text = "  "+(i + 1).ToString();
+			row.GetNode<Label>("Tem/Name").Text = ten;
 			row.GetNode<Label>("Tem/BestScore").Text = player.Score.ToString();
 			_list.AddChild(row);
 		}

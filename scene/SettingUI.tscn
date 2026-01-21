@@ -2,14 +2,13 @@
 
 [ext_resource type="Script" uid="uid://bdc7phs3rgnmp" path="res://scene/SettingUI.cs" id="1_p371f"]
 [ext_resource type="Texture2D" uid="uid://drxoeprwsaoce" path="res://asset/bg.png" id="2_73e8b"]
-[ext_resource type="Texture2D" uid="uid://dowp4nbrkwxcp" path="res://asset/SettingFrame.png" id="2_aqro2"]
+[ext_resource type="Texture2D" uid="uid://c5kwvcodb5d3b" path="res://asset/SettingFrame.png" id="2_aqro2"]
 [ext_resource type="FontFile" uid="uid://3fq0m0ua6jhr" path="res://asset/04B_19__.TTF" id="3_73e8b"]
 [ext_resource type="Script" uid="uid://jtw8x5k4perd" path="res://scene/OkBtn.cs" id="4_p371f"]
 [ext_resource type="Script" uid="uid://jvawxqfllw0g" path="res://scene/SegBar.cs" id="6_73e8b"]
-[ext_resource type="Texture2D" uid="uid://dvfqqr2qsvpqe" path="res://asset/ChatGPT Image 23_13_05 18 thg 1, 2026.png" id="6_bncms"]
+[ext_resource type="Texture2D" uid="uid://0aipqy8ahgdq" path="res://asset/ChatGPT Image 23_13_05 18 thg 1, 2026.png" id="6_bncms"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_73e8b"]
-load_path = "res://.godot/imported/ChatGPT Image 20_43_00 18 thg 1, 2026.png-4b14f94ae29e7d16dad0ba92b96c3655.ctex"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kf48q"]
 
@@ -166,3 +165,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("2_73e8b")
 metadata/_edit_use_anchors_ = true
+
+[node name="xbtn" type="TextureButton" parent="."]
+offset_left = 807.0
+offset_top = 268.0
+offset_right = 847.0
+offset_bottom = 308.0
